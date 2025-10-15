@@ -1,0 +1,122 @@
+[
+  {
+    "business_name": "Blue Bottle Coffee",
+    "business_type": "coffee_roaster",
+    "email": "partnerships@bluebottlecoffee.com",
+    "draft_id": "r-4422164985126992208",
+    "subject": "Partnership opportunity: Outbound platform launch",
+    "template_used": "coffee_roaster"
+  },
+  {
+    "business_name": "Intelligentsia Coffee",
+    "business_type": "coffee_roaster",
+    "email": "info@intelligentsiacoffee.com",
+    "draft_id": "r8756535410336456724",
+    "subject": "Partnership opportunity: Outbound platform launch",
+    "template_used": "coffee_roaster"
+  },
+  {
+    "business_name": "Counter Culture Coffee",
+    "business_type": "coffee_roaster",
+    "email": "info@counterculturecoffee.com",
+    "draft_id": "r-3944799209521617021",
+    "subject": "Partnership opportunity: Outbound platform launch",
+    "template_used": "coffee_roaster"
+  },
+  {
+    "business_name": "Tartine Bakery",
+    "business_type": "bakery",
+    "email": "info@tartinebakery.com",
+    "draft_id": "r-4322363780204523270",
+    "subject": "Outbound platform - early partner invitation",
+    "template_used": "bakery"
+  },
+  {
+    "business_name": "Dominique Ansel Bakery",
+    "business_type": "bakery",
+    "email": "info@dominiqueansel.com",
+    "draft_id": "r-2723322391839779389",
+    "subject": "Outbound platform - early partner invitation",
+    "template_used": "bakery"
+  },
+  {
+    "business_name": "Levain Bakery",
+    "business_type": "bakery",
+    "email": "info@levainbakery.com",
+    "draft_id": "r-881078062491386622",
+    "subject": "Outbound platform - early partner invitation",
+    "template_used": "bakery"
+  },
+  {
+    "business_name": "The Bouqs Company",
+    "business_type": "florist",
+    "email": "partnerships@bouqs.com",
+    "draft_id": "r-6892958511005074724",
+    "subject": "Behind-the-scenes experiences platform - invitation",
+    "template_used": "florist"
+  },
+  {
+    "business_name": "Flowerbx",
+    "business_type": "florist",
+    "email": "hello@flowerbx.com",
+    "draft_id": "r238169121476834249",
+    "subject": "Behind-the-scenes experiences platform - invitation",
+    "template_used": "florist"
+  },
+  {
+    "business_name": "Studio Choo",
+    "business_type": "florist",
+    "email": "info@studiochoo.com",
+    "draft_id": "r3850934991926214819",
+    "subject": "Behind-the-scenes experiences platform - invitation",
+    "template_used": "florist"
+  },
+  {
+    "business_name": "Russian River Brewing",
+    "business_type": "brewery",
+    "email": "info@russianriverbrewing.com",
+    "draft_id": "r-1047661570781307338",
+    "subject": "Partnership opportunity: Outbound experiences platform",
+    "template_used": "brewery"
+  },
+  {
+    "business_name": "Dogfish Head Brewery",
+    "business_type": "brewery",
+    "email": "info@dogfish.com",
+    "draft_id": "r-2108211714150224222",
+    "subject": "Partnership opportunity: Outbound experiences platform",
+    "template_used": "brewery"
+  },
+  {
+    "business_name": "Harney & Sons Tea",
+    "business_type": "tea_shop",
+    "email": "info@harney.com",
+    "draft_id": "r4095136532382242318",
+    "subject": "Early invitation: Outbound platform launch",
+    "template_used": "tea_shop"
+  },
+  {
+    "business_name": "Teavana",
+    "business_type": "tea_shop",
+    "email": "partnerships@teavana.com",
+    "draft_id": "r-8406012239166625641",
+    "subject": "Early invitation: Outbound platform launch",
+    "template_used": "tea_shop"
+  },
+  {
+    "business_name": "Dandelion Chocolate",
+    "business_type": "chocolate_maker",
+    "email": "hello@dandelionchocolate.com",
+    "draft_id": "r-2983217558436222338",
+    "subject": "Artisan business partnership - Outbound platform",
+    "template_used": "chocolate_maker"
+  },
+  {
+    "business_name": "Mast Brothers Chocolate",
+    "business_type": "chocolate_maker",
+    "email": "info@mastbrothers.com",
+    "draft_id": "r7033548946342799269",
+    "subject": "Artisan business partnership - Outbound platform",
+    "template_used": "chocolate_maker"
+  }
+]

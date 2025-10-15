@@ -1,0 +1,149 @@
+{
+  "modest_coffee_roasters": [
+    {
+      "name": "Local Bean Roastery",
+      "email": "info@localbeanroastery.com",
+      "location": "Portland, OR",
+      "type": "small_coffee_roaster",
+      "notes": "Small batch roasting, no current tours - perfect for adding experiences"
+    },
+    {
+      "name": "Corner Coffee Co",
+      "email": "hello@cornercoffeeco.com",
+      "location": "Austin, TX",
+      "type": "small_coffee_roaster",
+      "notes": "Neighborhood roaster, focuses only on production currently"
+    },
+    {
+      "name": "Mountain View Coffee",
+      "email": "contact@mountainviewcoffee.com",
+      "location": "Denver, CO", 
+      "type": "small_coffee_roaster",
+      "notes": "Family-owned, traditional methods, no visitor programs yet"
+    }
+  ],
+  "modest_bakeries": [
+    {
+      "name": "Village Bread Co",
+      "email": "hello@villagebreadco.com",
+      "location": "Burlington, VT",
+      "type": "small_bakery",
+      "notes": "Traditional sourdough methods, no current classes - could add bread making workshops"
+    },
+    {
+      "name": "Sunrise Pastries",
+      "email": "info@sunrisepastries.com",
+      "location": "Asheville, NC",
+      "type": "small_bakery", 
+      "notes": "French-style pastries, handmade daily, no visitor experiences yet"
+    },
+    {
+      "name": "Heritage Baking",
+      "email": "contact@heritagebaking.com",
+      "location": "Madison, WI",
+      "type": "small_bakery",
+      "notes": "Organic grains, mill own flour, perfect for farm-to-bread tours"
+    }
+  ],
+  "flower_studios": [
+    {
+      "name": "The Bouqs Company",
+      "email": "partnerships@bouqs.com",
+      "location": "Los Angeles, CA", 
+      "type": "florist",
+      "notes": "Modern florist, Instagram presence"
+    },
+    {
+      "name": "Flowerbx",
+      "email": "hello@flowerbx.com",
+      "location": "New York, NY",
+      "type": "florist",
+      "notes": "Luxury flowers, design focus"
+    },
+    {
+      "name": "Studio Choo",
+      "email": "info@studiochoo.com",
+      "location": "San Francisco, CA",
+      "type": "florist", 
+      "notes": "Wedding specialist, artistic arrangements"
+    }
+  ],
+  "modest_craft_breweries": [
+    {
+      "name": "Neighborhood Brewing",
+      "email": "info@neighborhoodbrewing.com",
+      "location": "Richmond, VA",
+      "type": "small_brewery",
+      "notes": "Local favorite, no tours yet - could add brewing classes"
+    },
+    {
+      "name": "Valley Hop Works",
+      "email": "hello@valleyhopworks.com",
+      "location": "Eugene, OR",
+      "type": "small_brewery",
+      "notes": "Craft focus, production-only currently, perfect for behind-scenes tours"
+    }
+  ],
+  "specialty_tea": [
+    {
+      "name": "Harney & Sons Tea",
+      "email": "info@harney.com",
+      "location": "Millerton, NY",
+      "type": "tea_shop",
+      "notes": "Premium tea, blending process"
+    },
+    {
+      "name": "Teavana",
+      "email": "partnerships@teavana.com",
+      "location": "Seattle, WA", 
+      "type": "tea_shop",
+      "notes": "Tea ceremonies, educational aspect"
+    }
+  ],
+  "modest_chocolate_makers": [
+    {
+      "name": "Bean & Bar Chocolate",
+      "email": "contact@beanandbar.com",
+      "location": "Seattle, WA",
+      "type": "small_chocolate_maker", 
+      "notes": "Small batch bean-to-bar, no current tours - perfect for chocolate making classes"
+    },
+    {
+      "name": "Cocoa Craft Co",
+      "email": "info@cocoacraftco.com",
+      "location": "Santa Fe, NM",
+      "type": "small_chocolate_maker",
+      "notes": "Artisan truffles, handmade process, no visitor programs yet"
+    }
+  ],
+  "artisan_producers": [
+    {
+      "name": "Mountain Pottery Studio",
+      "email": "studio@mountainpottery.com",
+      "location": "Taos, NM",
+      "type": "pottery_studio",
+      "notes": "Traditional wheel throwing, no classes offered - perfect for workshops"
+    },
+    {
+      "name": "Iron & Fire Blacksmith",
+      "email": "forge@ironandfire.com",
+      "location": "Lancaster, PA",
+      "type": "blacksmith_shop",
+      "notes": "Custom metalwork, traditional forge, no visitor experiences currently"
+    },
+    {
+      "name": "Grain & Wood Works",
+      "email": "info@grainandwood.com",
+      "location": "Ashland, OR",
+      "type": "woodworking_shop",
+      "notes": "Handcrafted furniture, no workshops yet - could add woodworking classes"
+    },
+    {
+      "name": "Farm Fresh Cheese Co",
+      "email": "hello@farmfreshcheese.com",
+      "location": "Vermont",
+      "type": "small_cheese_maker",
+      "notes": "Traditional aging methods, no farm tours - perfect for cheese making demos"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "coffee_roasters": [
+    {
+      "name": "Four Barrel Coffee",
+      "email": "info@fourbarrelcoffee.com",
+      "location": "San Francisco, CA",
+      "type": "coffee_roaster",
+      "notes": "Small batch roasting, no formal tours, open roastery"
+    },
+    {
+      "name": "Irving Farm Coffee Roasters",
+      "email": "info@irvingfarm.com",
+      "location": "New York, NY",
+      "type": "coffee_roaster",
+      "notes": "Multiple locations, roasting visible, no structured experiences"
+    },
+    {
+      "name": "George Howell Coffee",
+      "email": "info@georgehowellcoffee.com",
+      "location": "Boston, MA", 
+      "type": "coffee_roaster",
+      "notes": "Premium roaster, small operation, no current tours"
+    }
+  ],
+  "artisan_bakeries": [
+    {
+      "name": "She Wolf Bakery",
+      "email": "info@shewolfbakery.com",
+      "location": "Detroit, MI",
+      "type": "bakery",
+      "notes": "Wood-fired breads, open kitchen, no formal experiences"
+    },
+    {
+      "name": "Acme Bread Company",
+      "email": "info@acmebread.com",
+      "location": "Berkeley, CA",
+      "type": "bakery", 
+      "notes": "Wholesale bakery, visible production, no tours offered"
+    },
+    {
+      "name": "Lost Bread Co.",
+      "email": "info@lostbreadco.com",
+      "location": "Los Angeles, CA",
+      "type": "bakery",
+      "notes": "Small artisan bakery, interesting process, no classes"
+    }
+  ],
+  "flower_workshops": [
+    {
+      "name": "Saipua",
+      "email": "info@saipua.com",
+      "location": "Brooklyn, NY", 
+      "type": "florist",
+      "notes": "High-end floral design, studio workspace, no regular tours"
+    },
+    {
+      "name": "Putnam & Putnam",
+      "email": "hello@putnamputnam.com",
+      "location": "New York, NY",
+      "type": "florist",
+      "notes": "Editorial florals, creative process, no formal experiences"
+    },
+    {
+      "name": "Blush & Bloom",
+      "email": "info@blushandbloom.com",
+      "location": "Portland, OR",
+      "type": "florist", 
+      "notes": "Wedding florist, large workspace, no current offerings"
+    }
+  ],
+  "small_breweries": [
+    {
+      "name": "Cellarmaker Brewing",
+      "email": "info@cellarmakerbrewing.com",
+      "location": "San Francisco, CA",
+      "type": "brewery",
+      "notes": "Small taproom, brewing visible, no formal tours"
+    },
+    {
+      "name": "Threes Brewing",
+      "email": "info@threesbrewing.com",
+      "location": "Brooklyn, NY",
+      "type": "brewery",
+      "notes": "Local brewery, open layout, no structured experiences"
+    }
+  ],
+  "specialty_tea": [
+    {
+      "name": "Samovar Tea",
+      "email": "info@samovartea.com",
+      "location": "San Francisco, CA",
+      "type": "tea_shop",
+      "notes": "Multiple locations, tea blending, no formal ceremonies"
+    },
+    {
+      "name": "Tea Drunk",
+      "email": "info@teadrunk.com",
+      "location": "New York, NY", 
+      "type": "tea_shop",
+      "notes": "Traditional Chinese tea, preparation visible, no classes"
+    }
+  ],
+  "chocolate_makers": [
+    {
+      "name": "Raaka Chocolate",
+      "email": "info@raakachocolate.com",
+      "location": "Brooklyn, NY",
+      "type": "chocolate_maker", 
+      "notes": "Raw chocolate, small batch, no tours offered"
+    },
+    {
+      "name": "Dick Taylor Chocolate",
+      "email": "info@dicktaylorchocolate.com",
+      "location": "Eureka, CA",
+      "type": "chocolate_maker",
+      "notes": "Bean-to-bar, small operation, no formal experiences"
+    }
+  ],
+  "pottery_studios": [
+    {
+      "name": "East Fork Pottery",
+      "email": "info@eastfork.com",
+      "location": "Asheville, NC",
+      "type": "pottery_studio",
+      "notes": "Production pottery, visible workspace, no tours"
+    },
+    {
+      "name": "Humble Ceramics",
+      "email": "info@humbleceramics.com",
+      "location": "Los Angeles, CA",
+      "type": "pottery_studio",
+      "notes": "Restaurant ceramics, working studio, no experiences"
+    }
+  ]
+}
