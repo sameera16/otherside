@@ -148,14 +148,14 @@
         
         <div class="value-prop">
             <h2>💰 The Opportunity</h2>
-            <p style="font-size: 1.1em; line-height: 1.6;">People are fascinated by your craft. They wonder what it's really like to roast coffee at 6am, knead bread for hours, or forge metal. <span class="highlight">They'll pay $50 for 2 hours</span> to satisfy their curiosity and see the reality behind their fantasies.</p>
+            <p style="font-size: 1.1em; line-height: 1.6;">People are fascinated by your craft. They wonder what it's really like to roast coffee at 6am, knead bread for hours, or forge metal. <span class="highlight">They'll pay $50 for 1 hour</span> to satisfy their curiosity and see the reality behind their fantasies.</p>
             
             <div style="background: #e6fffa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #38b2ac;">
                 <h3 style="color: #234e52; margin-top: 0;">How It Works:</h3>
                 <ol style="color: #234e52; line-height: 1.6;">
                     <li><strong>Set your schedule</strong> - Choose when you're available for observation</li>
                     <li><strong>Do your normal work</strong> - No teaching, no performance, just your regular routine</li>
-                    <li><strong>Get paid</strong> - $50 per 2-hour session, automatic payment processing</li>
+                    <li><strong>Get paid</strong> - $50 per 1-hour session, automatic payment processing</li>
                 </ol>
             </div>
         </div>
@@ -188,9 +188,10 @@
                     
                     <label>How many observation sessions would you be comfortable with per day?</label>
                     <select id="sessionsPerDay">
-                        <option value="1">1 session (2 hours)</option>
-                        <option value="2">2 sessions (4 hours total)</option>
-                        <option value="3">3 sessions (6 hours total)</option>
+                        <option value="1">1 session (1 hour)</option>
+                        <option value="2">2 sessions (2 hours total)</option>
+                        <option value="3">3 sessions (3 hours total)</option>
+                        <option value="4">4 sessions (4 hours total)</option>
                     </select>
                     
                     <button onclick="calculateRevenue()">Calculate My Revenue</button>
@@ -258,7 +259,7 @@
             document.getElementById('sessions').innerHTML = `
                 <div style="margin-top: 15px; font-size: 0.9em;">
                     <div>${sessionsPerDay} sessions/day × ${workDays} days/week</div>
-                    <div>$50 per 2-hour session</div>
+                    <div>$50 per 1-hour session</div>
                     <div>1 observer at a time</div>
                     <div style="margin-top: 10px; font-style: italic; opacity: 0.8;">Just work normally. They watch. You earn.</div>
                 </div>
