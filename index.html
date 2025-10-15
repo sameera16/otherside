@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outbound - Modest SMB Revenue Calculator</title>
+    <title>Outbound Platform - Choose Your Experience</title>
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -48,70 +48,105 @@
             border-radius: 15px;
             border-left: 5px solid #4ecdc4;
         }
-        .business { 
-            margin: 15px 0; 
-            padding: 15px; 
-            background: rgba(255,255,255,0.1); 
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .notes { 
-            font-style: italic; 
-            opacity: 0.8; 
-            margin-top: 8px;
-        }
         h2 { 
             color: #4ecdc4; 
             margin-bottom: 20px;
         }
-        .revenue-calc {
+        .choice-section {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .path-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 30px;
             margin-top: 30px;
         }
-        .calc-input {
+        .path-card {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            color: #333;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .result {
-            background: #4ecdc4;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-        }
-        .big-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        button {
-            background: #4ecdc4;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
+            border: 3px solid transparent;
             transition: all 0.3s;
         }
-        button:hover {
-            background: #45b7b8;
-            transform: translateY(-2px);
+        .path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .customer-path {
+            border-color: #667eea;
+        }
+        .business-path {
+            border-color: #38a169;
+        }
+        .features {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .feature {
+            margin: 8px 0;
+            color: #666;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+        .customer-cta {
+            background: #667eea;
+            color: white;
+        }
+        .customer-cta:hover {
+            background: #5a67d8;
+        }
+        .business-cta {
+            background: #38a169;
+            color: white;
+        }
+        .business-cta:hover {
+            background: #2f855a;
+        }
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .step {
+            text-align: center;
+        }
+        .step-number {
+            background: #4ecdc4;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        .step-content h4 {
+            margin: 10px 0;
+            color: #4ecdc4;
         }
         @media (max-width: 768px) {
-            .revenue-calc {
+            .path-options {
+                grid-template-columns: 1fr;
+            }
+            .how-it-works {
                 grid-template-columns: 1fr;
             }
         }
@@ -119,130 +154,63 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎯 Outbound Platform</h1>
-        <p class="subtitle">AI-Powered Revenue Calculator for Modest SMBs</p>
+        <h1>👁️ Outbound Platform</h1>
+        <p class="subtitle">Real voyeurism. Real business. Real revenue.</p>
         
-        <div class="calculator">
-            <h2>📊 Experience Revenue Calculator</h2>
-            <p>See how much your business could earn by offering behind-the-scenes tours and workshops</p>
-            
-            <div class="revenue-calc">
-                <div class="calc-input">
-                    <h3>Your Business Details</h3>
-                    <label>Business Type:</label>
-                    <select id="businessType">
-                        <option value="coffee_roaster">Coffee Roaster</option>
-                        <option value="bakery">Artisan Bakery</option>
-                        <option value="brewery">Craft Brewery</option>
-                        <option value="chocolate_maker">Chocolate Maker</option>
-                        <option value="pottery_studio">Pottery Studio</option>
-                        <option value="blacksmith">Blacksmith Shop</option>
-                        <option value="woodworking">Woodworking Shop</option>
-                        <option value="cheese_maker">Cheese Maker</option>
-                    </select>
-                    
-                    <label>Location Type:</label>
-                    <select id="location">
-                        <option value="urban">Urban/City</option>
-                        <option value="suburban">Suburban</option>
-                        <option value="rural">Rural/Small Town</option>
-                    </select>
-                    
-                    <label>Current Daily Customers:</label>
-                    <input type="number" id="dailyCustomers" value="50" min="1">
-                    
-                    <button onclick="calculateRevenue()">Calculate Revenue Potential</button>
+        <div class="choice-section">
+            <h2>Choose Your Path</h2>
+            <div class="path-options">
+                <div class="path-card customer-path">
+                    <h3>👁️ I Want to Watch</h3>
+                    <p>Curious about other people's work? Want to see what it's really like to be a baker, blacksmith, or coffee roaster? Stop wondering and start watching.</p>
+                    <div class="features">
+                        <div class="feature">✓ $50 for 2 hours of pure reality</div>
+                        <div class="feature">✓ No performance, just authentic work</div>
+                        <div class="feature">✓ Satisfy your career curiosity</div>
+                    </div>
+                    <a href="customer.html" class="cta-button customer-cta">Browse Experiences →</a>
                 </div>
                 
-                <div class="result" id="results">
-                    <h3>💰 Revenue Projection</h3>
-                    <div>Monthly Revenue:</div>
-                    <div class="big-number" id="monthlyRevenue">$0</div>
-                    <div>Annual Revenue:</div>
-                    <div class="big-number" id="annualRevenue">$0</div>
-                    <div id="sessions"></div>
+                <div class="path-card business-path">
+                    <h3>💼 I Want to Earn</h3>
+                    <p>Own a craft business? Let curious people watch you work and earn passive income. No teaching, no performance - just get paid for doing what you already do.</p>
+                    <div class="features">
+                        <div class="feature">✓ $50 per 2-hour session</div>
+                        <div class="feature">✓ Zero disruption to your workflow</div>
+                        <div class="feature">✓ You control the schedule</div>
+                    </div>
+                    <a href="business.html" class="cta-button business-cta">Join Platform →</a>
                 </div>
             </div>
         </div>
         
         <div class="category">
-            <h2>🎯 Target: Modest SMBs Without Existing Tours</h2>
-            <p>Focusing on small businesses that don't currently offer experiences but could benefit from adding them:</p>
-            
-            <div class="business">
-                <strong>☕ Coffee Roasters</strong><br>
-                <span class="notes">Small batch roasting operations without current tour programs - perfect for adding roasting demonstrations</span>
-            </div>
-            
-            <div class="business">
-                <strong>🥖 Artisan Bakeries</strong><br>
-                <span class="notes">Traditional bread makers without classes - ideal for bread making workshops</span>
-            </div>
-            
-            <div class="business">
-                <strong>🍺 Small Breweries</strong><br>
-                <span class="notes">Production-focused craft breweries without visitor programs - great for behind-the-scenes brewing tours</span>
-            </div>
-            
-            <div class="business">
-                <strong>🎨 Craft Producers</strong><br>
-                <span class="notes">Pottery studios, blacksmiths, woodworkers without workshops - perfect for hands-on experiences</span>
+            <h2>🎯 How It Works</h2>
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Businesses Join Platform</h4>
+                        <p>Craft businesses set their availability for observation sessions</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Customers Book Sessions</h4>
+                        <p>Curious people pay $50 to watch 2 hours of authentic work</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Pure Voyeurism</h4>
+                        <p>No teaching, no performance - just real people doing real work</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function calculateRevenue() {
-            const businessType = document.getElementById('businessType').value;
-            const location = document.getElementById('location').value;
-            const dailyCustomers = parseInt(document.getElementById('dailyCustomers').value);
-            
-            // Base rates by business type
-            const rates = {
-                'coffee_roaster': 40,
-                'bakery': 45,
-                'chocolate_maker': 50,
-                'brewery': 45,
-                'pottery_studio': 50,
-                'blacksmith': 60,
-                'woodworking': 55,
-                'cheese_maker': 45
-            };
-            
-            // Location multipliers
-            const locationMultipliers = {
-                'urban': 1.3,
-                'suburban': 1.1,
-                'rural': 0.9
-            };
-            
-            const baseRate = rates[businessType] || 40;
-            const locationMultiplier = locationMultipliers[location] || 1.0;
-            const adjustedRate = Math.round(baseRate * locationMultiplier);
-            
-            // Calculate sessions based on customer base
-            const potentialInterest = Math.round(dailyCustomers * 0.15); // 15% interest rate
-            const dailySessions = Math.min(Math.max(1, Math.round(potentialInterest / 5)), 4); // 1-4 sessions max
-            const observersPerSession = 3; // Average
-            
-            const monthlySessions = dailySessions * 22; // 22 working days
-            const monthlyRevenue = monthlySessions * adjustedRate * observersPerSession;
-            const annualRevenue = monthlyRevenue * 12;
-            
-            // Update display
-            document.getElementById('monthlyRevenue').textContent = '$' + monthlyRevenue.toLocaleString();
-            document.getElementById('annualRevenue').textContent = '$' + annualRevenue.toLocaleString();
-            document.getElementById('sessions').innerHTML = `
-                <div style="margin-top: 15px; font-size: 0.9em;">
-                    <div>${dailySessions} sessions/day</div>
-                    <div>$${adjustedRate}/hour rate</div>
-                    <div>${observersPerSession} people/session avg</div>
-                </div>
-            `;
-        }
-        
-        // Calculate initial values
-        calculateRevenue();
-    </script>
 </body>
 </html>

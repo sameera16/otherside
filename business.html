@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbound for Business - Turn Your Craft Into Revenue</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #2c5282 0%, #2d3748 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { 
+            color: white; 
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: #63b3ed;
+        }
+        .value-prop {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .calculator {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .benefits { 
+            margin: 30px 0; 
+            padding: 20px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px;
+            border-left: 5px solid #63b3ed;
+        }
+        .benefit-item { 
+            margin: 15px 0; 
+            padding: 15px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h2 { 
+            color: #63b3ed; 
+            margin-bottom: 20px;
+        }
+        .revenue-calc {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .calc-input {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .result {
+            background: #2b6cb0;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .big-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        button {
+            background: #63b3ed;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #4299e1;
+            transform: translateY(-2px);
+        }
+        .cta-button {
+            background: #38a169;
+            font-size: 18px;
+            padding: 15px 40px;
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background: #2f855a;
+        }
+        .highlight {
+            background: #ffd700;
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .revenue-calc {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💼 Outbound for Business</h1>
+        <p class="subtitle">Turn your craft into passive revenue. No teaching, no performance, just earning while you work.</p>
+        
+        <div class="value-prop">
+            <h2>💰 The Opportunity</h2>
+            <p style="font-size: 1.1em; line-height: 1.6;">People are fascinated by your craft. They wonder what it's really like to roast coffee at 6am, knead bread for hours, or forge metal. <span class="highlight">They'll pay $50 for 2 hours</span> to satisfy their curiosity and see the reality behind their fantasies.</p>
+            
+            <div style="background: #e6fffa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #38b2ac;">
+                <h3 style="color: #234e52; margin-top: 0;">How It Works:</h3>
+                <ol style="color: #234e52; line-height: 1.6;">
+                    <li><strong>Set your schedule</strong> - Choose when you're available for observation</li>
+                    <li><strong>Do your normal work</strong> - No teaching, no performance, just your regular routine</li>
+                    <li><strong>Get paid</strong> - $50 per 2-hour session, automatic payment processing</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="calculator">
+            <h2>💰 Revenue Calculator</h2>
+            <p>See how much you could earn by letting people watch you work:</p>
+            
+            <div class="revenue-calc">
+                <div class="calc-input">
+                    <h3>Your Business Details</h3>
+                    <label>Business Type:</label>
+                    <select id="businessType">
+                        <option value="coffee_roaster">Coffee Roaster</option>
+                        <option value="bakery">Artisan Bakery</option>
+                        <option value="brewery">Craft Brewery</option>
+                        <option value="chocolate_maker">Chocolate Maker</option>
+                        <option value="pottery_studio">Pottery Studio</option>
+                        <option value="blacksmith">Blacksmith Shop</option>
+                        <option value="woodworking">Woodworking Shop</option>
+                        <option value="cheese_maker">Cheese Maker</option>
+                    </select>
+                    
+                    <label>How many days per week are you open?</label>
+                    <select id="workDays">
+                        <option value="5">5 days (Mon-Fri)</option>
+                        <option value="6">6 days</option>
+                        <option value="7">7 days</option>
+                    </select>
+                    
+                    <label>How many observation sessions would you be comfortable with per day?</label>
+                    <select id="sessionsPerDay">
+                        <option value="1">1 session (2 hours)</option>
+                        <option value="2">2 sessions (4 hours total)</option>
+                        <option value="3">3 sessions (6 hours total)</option>
+                    </select>
+                    
+                    <button onclick="calculateRevenue()">Calculate My Revenue</button>
+                </div>
+                
+                <div class="result" id="results">
+                    <h3>💰 Your Potential Revenue</h3>
+                    <div>Monthly Revenue:</div>
+                    <div class="big-number" id="monthlyRevenue">$0</div>
+                    <div>Annual Revenue:</div>
+                    <div class="big-number" id="annualRevenue">$0</div>
+                    <div id="sessions"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefits">
+            <h2>🎯 Why Business Owners Love Outbound</h2>
+            
+            <div class="benefit-item">
+                <strong>💸 Pure Passive Income</strong><br>
+                <span style="opacity: 0.8;">No extra work, no teaching, no customer service. Just do what you already do and get paid for it.</span>
+            </div>
+            
+            <div class="benefit-item">
+                <strong>🎯 Zero Disruption</strong><br>
+                <span style="opacity: 0.8;">Observers stay out of your way. They're there to watch, not interfere with your workflow.</span>
+            </div>
+            
+            <div class="benefit-item">
+                <strong>📅 You Control the Schedule</strong><br>
+                <span style="opacity: 0.8;">Set your available times. Cancel anytime. You're in complete control of when people can observe.</span>
+            </div>
+            
+            <div class="benefit-item">
+                <strong>💳 Automatic Payments</strong><br>
+                <span style="opacity: 0.8;">We handle all billing, payments, and customer management. Money hits your account automatically.</span>
+            </div>
+            
+            <div class="benefit-item">
+                <strong>🛡️ Vetted Customers</strong><br>
+                <span style="opacity: 0.8;">All observers are pre-screened. Professional boundaries maintained. No weirdos, just curious people.</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="#" class="cta-button">Join Outbound Platform →</a>
+            <p style="opacity: 0.8; margin-top: 10px;">Setup takes 5 minutes. Start earning this week.</p>
+        </div>
+    </div>
+
+    <script>
+        function calculateRevenue() {
+            const workDays = parseInt(document.getElementById('workDays').value);
+            const sessionsPerDay = parseInt(document.getElementById('sessionsPerDay').value);
+            
+            const dailyRevenue = sessionsPerDay * 50; // $50 per session
+            const weeklyRevenue = dailyRevenue * workDays;
+            const monthlyRevenue = weeklyRevenue * 4.3; // Average weeks per month
+            const annualRevenue = monthlyRevenue * 12;
+            
+            // Update display
+            document.getElementById('monthlyRevenue').textContent = '$' + Math.round(monthlyRevenue).toLocaleString();
+            document.getElementById('annualRevenue').textContent = '$' + Math.round(annualRevenue).toLocaleString();
+            document.getElementById('sessions').innerHTML = `
+                <div style="margin-top: 15px; font-size: 0.9em;">
+                    <div>${sessionsPerDay} sessions/day × ${workDays} days/week</div>
+                    <div>$50 per 2-hour session</div>
+                    <div>1 observer at a time</div>
+                    <div style="margin-top: 10px; font-style: italic; opacity: 0.8;">Just work normally. They watch. You earn.</div>
+                </div>
+            `;
+        }
+        
+        // Calculate initial values
+        calculateRevenue();
+    </script>
+</body>
+</html>

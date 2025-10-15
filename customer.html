@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbound - Watch Real People Do Real Work</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { 
+            color: white; 
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .hero {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .experiences { 
+            margin: 30px 0; 
+            padding: 20px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 15px;
+            border-left: 5px solid #4ecdc4;
+        }
+        .experience { 
+            margin: 20px 0; 
+            padding: 20px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: center;
+        }
+        .notes { 
+            font-style: italic; 
+            opacity: 0.8; 
+            margin-top: 8px;
+        }
+        h2 { 
+            color: #4ecdc4; 
+            margin-bottom: 20px;
+        }
+        .price {
+            background: #4ecdc4;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            min-width: 120px;
+        }
+        .price-big {
+            font-size: 1.5em;
+        }
+        button, .book-button {
+            background: #4ecdc4;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        button:hover, .book-button:hover {
+            background: #45b7b8;
+            transform: translateY(-2px);
+        }
+        .curiosity-section {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .faq {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .faq-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .highlight {
+            background: #ffd700;
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .experience {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👁️ Outbound</h1>
+        <p class="subtitle">You're obsessed with everyone else's life anyway. Now see it for real.</p>
+        
+        <div class="hero">
+            <h2 style="color: #333; margin-top: 0;">Stop Wondering. Start Watching.</h2>
+            <p style="font-size: 1.1em; line-height: 1.6;">Ever been jealous of someone's job? Wondered if the grass is greener? Now you can find out. <span class="highlight">$50 for 2 hours</span> of pure, unfiltered reality. No performance, no teaching - just watch real people do real work.</p>
+            
+            <div style="background: #e6fffa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #234e52; margin-top: 0;">How It Works:</h3>
+                <ol style="color: #234e52; text-align: left; max-width: 400px; margin: 0 auto;">
+                    <li>Pick an experience that makes you curious</li>
+                    <li>Book a 2-hour observation session</li>
+                    <li>Show up and watch them work</li>
+                    <li>Satisfy your curiosity once and for all</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="experiences">
+            <h2>👁️ Available Voyeurism Experiences</h2>
+            <p>These are real businesses with real people doing real work. No show, no act - just authentic reality.</p>
+            
+            <div class="experience">
+                <div>
+                    <strong>☕ "Is being a coffee roaster actually peaceful?"</strong><br>
+                    <span class="notes">Watch them during their 6am routine. See if it's as zen as it looks on Instagram. Smell the beans, hear the machines, witness the reality.</span>
+                </div>
+                <div class="price">
+                    <div class="price-big">$50</div>
+                    <div>2 hours</div>
+                    <a href="#" class="book-button" style="margin-top: 10px; padding: 8px 16px; font-size: 14px;">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="experience">
+                <div>
+                    <strong>🥖 "Do bakers really love waking up at 4am?"</strong><br>
+                    <span class="notes">Be there at 4am when they're kneading dough. See the sweat, the repetition, the sore back. Still think it's romantic?</span>
+                </div>
+                <div class="price">
+                    <div class="price-big">$50</div>
+                    <div>2 hours</div>
+                    <a href="#" class="book-button" style="margin-top: 10px; padding: 8px 16px; font-size: 14px;">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="experience">
+                <div>
+                    <strong>🔨 "Is blacksmithing as badass as it seems?"</strong><br>
+                    <span class="notes">Watch the sweat, the repetition, the sore muscles. See if you still want to quit your desk job after 2 hours of this.</span>
+                </div>
+                <div class="price">
+                    <div class="price-big">$50</div>
+                    <div>2 hours</div>
+                    <a href="#" class="book-button" style="margin-top: 10px; padding: 8px 16px; font-size: 14px;">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="experience">
+                <div>
+                    <strong>🍺 "Are brewers just drinking beer all day?"</strong><br>
+                    <span class="notes">Spoiler alert: mostly cleaning equipment and doing math. But hey, satisfy your curiosity once and for all.</span>
+                </div>
+                <div class="price">
+                    <div class="price-big">$50</div>
+                    <div>2 hours</div>
+                    <a href="#" class="book-button" style="margin-top: 10px; padding: 8px 16px; font-size: 14px;">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="experience">
+                <div>
+                    <strong>🧀 "Is cheese making actually artisanal?"</strong><br>
+                    <span class="notes">Watch the precise measurements, the timing, the chemistry. See if it's craft or just following recipes.</span>
+                </div>
+                <div class="price">
+                    <div class="price-big">$50</div>
+                    <div>2 hours</div>
+                    <a href="#" class="book-button" style="margin-top: 10px; padding: 8px 16px; font-size: 14px;">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="experience">
+                <div>
+                    <strong>🏺 "Is pottery as meditative as they say?"</strong><br>
+                    <span class="notes">Watch them center clay for the 50th time today. See if it's zen or just muscle memory and patience.</span>
+                </div>
+                <div class="price">
+                    <div class="price-big">$50</div>
+                    <div>2 hours</div>
+                    <a href="#" class="book-button" style="margin-top: 10px; padding: 8px 16px; font-size: 14px;">Book Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="curiosity-section">
+            <h2 style="color: #333; margin-top: 0;">Why We're All Voyeurs</h2>
+            <p style="color: #333; line-height: 1.6;">Let's be honest - you've definitely fantasized about someone else's job. You've wondered if your life would be better if you were a baker, a blacksmith, a coffee roaster. You've romanticized these careers based on Instagram posts and Pinterest boards.</p>
+            
+            <p style="color: #333; line-height: 1.6;">But what's it REALLY like? What does their Monday morning look like? What do they think about while they work? Are they actually happier, or just better at social media?</p>
+            
+            <p style="color: #333; line-height: 1.6;"><strong>Stop wondering. Start watching.</strong> For less than what you'd spend on a nice dinner, you can satisfy your curiosity and see reality - not the highlight reel.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>🤔 Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <strong>Q: Can I talk to them while they work?</strong><br>
+                A: Minimal interaction. You're there to observe, not interview. They're focused on their work.
+            </div>
+            
+            <div class="faq-item">
+                <strong>Q: What if I get bored?</strong><br>
+                A: You can leave anytime. But most people find the reality more interesting than their fantasies.
+            </div>
+            
+            <div class="faq-item">
+                <strong>Q: Is this weird?</strong><br>
+                A: Probably. But so is spending hours watching strangers on social media. At least this is real.
+            </div>
+            
+            <div class="faq-item">
+                <strong>Q: Can I take photos/videos?</strong><br>
+                A: No. This is about experiencing reality, not creating content.
+            </div>
+            
+            <div class="faq-item">
+                <strong>Q: What if I want to try doing the work?</strong><br>
+                A: This is observation only. If you want hands-on experience, book their actual classes or workshops.
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="#" class="book-button" style="font-size: 18px; padding: 15px 40px;">Browse All Experiences →</a>
+            <p style="opacity: 0.8; margin-top: 10px;">Satisfy your curiosity. See reality.</p>
+        </div>
+    </div>
+</body>
+</html>
