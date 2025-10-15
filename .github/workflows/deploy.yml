@@ -1,0 +1,103 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Create index.html for GitHub Pages
+        run: |
+          mkdir -p docs
+          cat > docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Modest SMB Outreach Tool</title>
+              <style>
+                  body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+                  .container { max-width: 800px; margin: 0 auto; }
+                  .category { margin: 20px 0; padding: 15px; border-left: 4px solid #007cba; background: #f9f9f9; }
+                  h1 { color: #333; }
+                  h2 { color: #007cba; }
+                  .business { margin: 10px 0; padding: 10px; background: white; border-radius: 5px; }
+                  .notes { font-style: italic; color: #666; }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>Modest SMB Outreach Campaign</h1>
+                  <p>Targeting small businesses without existing tour/class programs who could benefit from adding experiential offerings.</p>
+                  
+                  <div class="category">
+                      <h2>Coffee Roasters</h2>
+                      <div class="business">
+                          <strong>Local Bean Roastery</strong> - Portland, OR<br>
+                          <span class="notes">Small batch roasting, no current tours - perfect for adding experiences</span>
+                      </div>
+                      <div class="business">
+                          <strong>Corner Coffee Co</strong> - Austin, TX<br>
+                          <span class="notes">Neighborhood roaster, focuses only on production currently</span>
+                      </div>
+                  </div>
+                  
+                  <div class="category">
+                      <h2>Artisan Bakeries</h2>
+                      <div class="business">
+                          <strong>Village Bread Co</strong> - Burlington, VT<br>
+                          <span class="notes">Traditional sourdough methods, could add bread making workshops</span>
+                      </div>
+                      <div class="business">
+                          <strong>Heritage Baking</strong> - Madison, WI<br>
+                          <span class="notes">Organic grains, mill own flour, perfect for farm-to-bread tours</span>
+                      </div>
+                  </div>
+                  
+                  <div class="category">
+                      <h2>Craft Producers</h2>
+                      <div class="business">
+                          <strong>Mountain Pottery Studio</strong> - Taos, NM<br>
+                          <span class="notes">Traditional wheel throwing, no classes offered - perfect for workshops</span>
+                      </div>
+                      <div class="business">
+                          <strong>Iron & Fire Blacksmith</strong> - Lancaster, PA<br>
+                          <span class="notes">Custom metalwork, traditional forge, no visitor experiences currently</span>
+                      </div>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
