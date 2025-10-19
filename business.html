@@ -3,528 +3,1240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Otherside for Business - Turn Your Craft Into Revenue</title>
+    <title>💼 Otherside for Business</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
             overflow-x: hidden;
         }
         
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 24px;
-        }
-        
-        header {
-            padding: 40px 0 80px;
-            text-align: center;
-            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-        }
-        
-        h1 { 
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        
-        .subtitle {
-            font-size: 1.25rem;
-            color: #888888;
-            margin-bottom: 64px;
-            font-weight: 400;
-        }
-        
-        .value-prop {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border: 1px solid #333333;
-            border-radius: 24px;
-            padding: 48px;
-            margin: 40px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .value-prop::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-        }
-        
-        .value-prop h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-            color: #10b981;
-        }
-        
-        .value-prop p {
-            color: #cccccc;
-            font-size: 1.125rem;
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-        
-        .how-it-works-box {
-            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
-            border-radius: 16px;
-            padding: 32px;
-            margin-top: 32px;
-        }
-        
-        .how-it-works-box h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: white;
-        }
-        
-        .how-it-works-box ol {
-            list-style: none;
-            counter-reset: step-counter;
-        }
-        
-        .how-it-works-box li {
-            counter-increment: step-counter;
-            position: relative;
-            padding-left: 48px;
-            margin-bottom: 16px;
-            color: white;
-            line-height: 1.6;
+        .hero {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
         }
         
-        .how-it-works-box li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
-            color: white;
-            width: 32px;
-            height: 32px;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .coin-visual {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .coin {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.875rem;
-            font-weight: 600;
-            flex-shrink: 0;
+            font-size: 5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: spin 4s linear infinite;
+        }
+        
+        .flow-diagram {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem auto;
+            max-width: 1200px;
+        }
+        
+        .flow-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            animation: fadeInUp 1s ease both;
+        }
+        
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        
+        .step-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover .step-icon {
+            transform: scale(1.1);
+        }
+        
+        .arrow {
+            font-size: 3rem;
+            opacity: 0.5;
+            animation: slideRight 1s ease-in-out infinite;
         }
         
         .calculator {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border: 1px solid #333333;
-            border-radius: 24px;
-            padding: 48px;
-            margin: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .calculator::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 4rem auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
         
         .calculator h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
             font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-            color: #10b981;
         }
         
-        .calculator > p {
-            color: #cccccc;
-            font-size: 1.125rem;
-            margin-bottom: 40px;
+        .input-group {
+            margin: 1.5rem 0;
         }
         
-        .revenue-calc {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 40px;
-        }
-        
-        .calc-input {
-            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
-            border: 1px solid #444444;
-            border-radius: 16px;
-            padding: 32px;
-        }
-        
-        .calc-input h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: #ffffff;
-        }
-        
-        .calc-input label {
+        .input-group label {
             display: block;
-            margin-bottom: 8px;
-            color: #cccccc;
-            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
-        select {
+        .slider {
             width: 100%;
-            padding: 12px 16px;
-            margin-bottom: 20px;
-            border: 1px solid #555555;
-            border-radius: 8px;
-            background: #1a1a1a;
-            color: #ffffff;
-            font-size: 1rem;
-        }
-        
-        select:focus {
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
             outline: none;
-            border-color: #10b981;
+            -webkit-appearance: none;
         }
         
-        button {
-            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
-            color: white;
-            padding: 16px 32px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #667eea;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 100%;
-            margin-top: 16px;
         }
         
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-        }
-        
-        .result {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-        }
-        
-        .result h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 24px;
+        .result-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
         }
         
-        .result > div {
-            margin-bottom: 8px;
-            color: rgba(255,255,255,0.8);
+        .result-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
         
         .big-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 16px 0;
-            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
         }
         
         .benefits {
-            margin: 80px 0;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .benefits h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
-            margin-bottom: 48px;
-            letter-spacing: -0.02em;
-            color: #10b981;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease both;
         }
         
-        .benefit-item {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border: 1px solid #333333;
-            border-radius: 16px;
-            padding: 32px;
-            margin: 24px 0;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .benefit-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-        }
-        
-        .benefit-item:hover {
-            transform: translateY(-4px);
-            border-color: #555555;
+        .benefit-card:hover {
+            transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         
-        .benefit-item strong {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #ffffff;
+        .benefit-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
             display: block;
-            margin-bottom: 12px;
         }
         
-        .benefit-item span {
-            color: #aaaaaa;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        .main-cta {
-            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
-            color: white;
-            padding: 20px 48px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-        }
-        
-        .main-cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .cta-section {
             text-align: center;
-            margin: 80px 0;
-            padding: 48px;
-            background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
-            border-radius: 24px;
+            padding: 4rem 2rem;
         }
         
-        .cta-section p {
-            color: #888888;
-            margin-top: 16px;
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .experience-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .business-dropdown {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .business-dropdown:hover {
+            transform: scale(1.05);
+        }
+        
+        .experience-container {
+            margin-top: 3rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            min-height: 600px;
+        }
+        
+        .journey-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .journey-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.6s ease both;
+            transition: transform 0.3s ease;
+        }
+        
+        .journey-card:nth-child(1) { animation-delay: 0.1s; }
+        .journey-card:nth-child(2) { animation-delay: 0.2s; }
+        .journey-card:nth-child(3) { animation-delay: 0.3s; }
+        .journey-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .journey-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        .journey-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .journey-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .journey-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .experience-title {
+            color: #667eea;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-subtitle {
+            color: #666;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .loading-animation {
+            opacity: 0.7;
+            animation: loadingPulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes loadingPulse {
+            0%, 100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.02);
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .visual-story {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .story-panel {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease both;
+        }
+        
+        .story-panel:nth-child(1) { animation-delay: 0.1s; }
+        .story-panel:nth-child(2) { animation-delay: 0.2s; }
+        .story-panel:nth-child(3) { animation-delay: 0.3s; }
+        .story-panel:nth-child(4) { animation-delay: 0.4s; }
+        .story-panel:nth-child(5) { animation-delay: 0.5s; }
+        
+        .story-panel:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        
+        .story-illustration {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .story-panel:hover .story-illustration {
+            animation: loadingPulse 2s ease-in-out infinite;
+        }
+        
+        .story-text {
+            padding: 2rem;
+            color: #333;
+        }
+        
+        .story-text h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+        
+        .story-text p {
             font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
         }
         
-        .highlight {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #000000;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9em;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        @keyframes slideRight {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
         
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .revenue-calc {
-                grid-template-columns: 1fr;
-            }
-            
-            .value-prop,
-            .calculator,
-            .benefit-item {
-                padding: 32px 24px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .benefits h2 {
+            .hero h1 {
                 font-size: 2rem;
             }
-            
-            .value-prop h2,
-            .calculator h2 {
-                font-size: 1.75rem;
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .arrow {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>💼 Otherside for Business</h1>
-            <p class="subtitle">Turn your craft into passive revenue. No teaching, no performance, just earning while you work.</p>
+    <div class="hero">
+        <h1>💼 Turn Your Craft Into Cash</h1>
+        <p>No teaching. No performance. Just earning while you work.</p>
+        
+        <div class="coin-visual">
+            <div class="coin">💰</div>
         </div>
-    </header>
+    </div>
     
-    <div class="container">
-        <div class="value-prop">
-            <h2>💰 The Opportunity</h2>
-            <p>People watch your type of work online AND wonder what it actually feels like. There's a gap between watching and experiencing that creates massive demand. <span class="highlight">They'll pay $50 for 1 hour</span> to bridge that gap and experience the real thing.</p>
-            
-            <div class="how-it-works-box">
-                <h3>How It Works:</h3>
-                <ol>
-                    <li><strong>Set your schedule</strong> - Choose when you're available for observation</li>
-                    <li><strong>Do your normal work</strong> - No teaching, no performance, just your regular routine</li>
-                    <li><strong>Get paid</strong> - $50 per 1-hour session, automatic payment processing</li>
-                </ol>
+    <div class="flow-diagram">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">How It Works</h2>
+        <div class="flow-steps">
+            <div class="step">
+                <div class="step-icon">📅</div>
+                <h3>Set Schedule</h3>
+                <p>Choose when you're available</p>
             </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="step">
+                <div class="step-icon">🔨</div>
+                <h3>Do Your Work</h3>
+                <p>Just your normal routine</p>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="step">
+                <div class="step-icon">💵</div>
+                <h3>Get Paid</h3>
+                <p>$50 per hour, automatic</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="experience-section">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: white;">See The Experience</h2>
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <select id="business-type" class="business-dropdown">
+                <option value="boba">🧋 Boba Tea Shop</option>
+                <option value="coffee">☕ Coffee Shop</option>
+                <option value="pottery">🏺 Pottery Studio</option>
+                <option value="bakery">🥐 Bakery</option>
+                <option value="tattoo">🎨 Tattoo Parlor</option>
+                <option value="woodwork">🪵 Woodworking Shop</option>
+            </select>
         </div>
         
-        <div class="calculator">
-            <h2>💰 Revenue Calculator</h2>
-            <p>See how much you could earn by letting people watch you work:</p>
-            
-            <div class="revenue-calc">
-                <div class="calc-input">
-                    <h3>Your Business Details</h3>
-                    <label>Business Type:</label>
-                    <select id="businessType">
-                        <option value="coffee_roaster">Coffee Roaster</option>
-                        <option value="bakery">Artisan Bakery</option>
-                        <option value="brewery">Craft Brewery</option>
-                        <option value="chocolate_maker">Chocolate Maker</option>
-                        <option value="pottery_studio">Pottery Studio</option>
-                        <option value="blacksmith">Blacksmith Shop</option>
-                        <option value="woodworking">Woodworking Shop</option>
-                        <option value="cheese_maker">Cheese Maker</option>
-                    </select>
-                    
-                    <label>How many days per week are you open?</label>
-                    <select id="workDays">
-                        <option value="5">5 days (Mon-Fri)</option>
-                        <option value="6">6 days</option>
-                        <option value="7">7 days</option>
-                    </select>
-                    
-                    <label>How many observation sessions would you be comfortable with per day?</label>
-                    <select id="sessionsPerDay">
-                        <option value="1">1 session (1 hour)</option>
-                        <option value="2">2 sessions (2 hours total)</option>
-                        <option value="3">3 sessions (3 hours total)</option>
-                        <option value="4">4 sessions (4 hours total)</option>
-                    </select>
-                    
-                    <button onclick="calculateRevenue()">Calculate My Revenue</button>
-                </div>
-                
-                <div class="result" id="results">
-                    <h3>💰 Your Potential Revenue</h3>
-                    <div>Monthly Revenue:</div>
-                    <div class="big-number" id="monthlyRevenue">$0</div>
-                    <div>Annual Revenue:</div>
-                    <div class="big-number" id="annualRevenue">$0</div>
-                    <div id="sessions"></div>
-                </div>
-            </div>
-        </div>
+        <div id="experience-visual" class="experience-container"></div>
+    </div>
+    
+    <div class="visual-story">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: white;">The Observer's Journey</h2>
         
-        <div class="benefits">
-            <h2>🎯 Join the Experience Marketplace</h2>
-            
-            <div class="benefit-item">
-                <strong>🌐 Massive Market Demand</strong><br>
-                <span style="opacity: 0.8;">There's a huge gap between online content consumption and real experiences. We're building the infrastructure to bridge that gap at scale.</span>
+        <div class="story-grid">
+            <div class="story-panel">
+                <svg class="story-illustration" viewBox="0 0 400 300">
+                    <!-- Background - Coffee shop interior -->
+                    <rect width="400" height="300" fill="#e8d5c4"/>
+                    
+                    <!-- Window with view -->
+                    <rect x="250" y="40" width="120" height="100" fill="#a8c5dd" opacity="0.4"/>
+                    <line x1="310" y1="40" x2="310" y2="140" stroke="#8b7355" stroke-width="3"/>
+                    <line x1="250" y1="90" x2="370" y2="90" stroke="#8b7355" stroke-width="3"/>
+                    
+                    <!-- Shelves with coffee equipment -->
+                    <rect x="20" y="60" width="180" height="8" fill="#6b5344"/>
+                    <rect x="20" y="110" width="180" height="8" fill="#6b5344"/>
+                    
+                    <!-- Coffee equipment on shelves -->
+                    <rect x="40" y="70" width="25" height="35" fill="#4a4a4a" rx="3"/>
+                    <rect x="42" y="72" width="21" height="15" fill="#333"/>
+                    <circle cx="52.5" cy="95" r="5" fill="#d4a574"/>
+                    
+                    <circle cx="100" cy="85" r="15" fill="#8b6f47"/>
+                    <circle cx="100" cy="85" r="12" fill="#6b5344"/>
+                    <circle cx="140" cy="85" r="15" fill="#8b6f47"/>
+                    <circle cx="140" cy="85" r="12" fill="#6b5344"/>
+                    
+                    <!-- Coffee bags -->
+                    <rect x="50" y="120" width="30" height="40" fill="#8b4513" rx="2"/>
+                    <rect x="90" y="120" width="30" height="40" fill="#654321" rx="2"/>
+                    
+                    <!-- Shop owner - woman with apron, looking sad -->
+                    <ellipse cx="120" cy="210" rx="45" ry="55" fill="#c17c5a"/>
+                    <!-- Apron -->
+                    <rect x="85" y="195" width="70" height="80" fill="#8b7355"/>
+                    <rect x="95" y="195" width="50" height="5" fill="#6b5344"/>
+                    <line x1="100" y1="195" x2="85" y2="210" stroke="#6b5344" stroke-width="2"/>
+                    <line x1="140" y1="195" x2="155" y2="210" stroke="#6b5344" stroke-width="2"/>
+                    
+                    <!-- Head -->
+                    <circle cx="120" cy="170" r="32" fill="#d4a574"/>
+                    <!-- Hair - ponytail -->
+                    <ellipse cx="120" cy="165" rx="33" ry="28" fill="#4a3426"/>
+                    <ellipse cx="155" cy="170" rx="12" ry="25" fill="#4a3426"/>
+                    <!-- Face -->
+                    <ellipse cx="112" cy="175" rx="3" ry="5" fill="#2a1a0a"/>
+                    <ellipse cx="128" cy="175" rx="3" ry="5" fill="#2a1a0a"/>
+                    <path d="M 112 185 Q 120 183 128 185" stroke="#2a1a0a" fill="none" stroke-width="2"/>
+                    <!-- Eyebrows - worried -->
+                    <path d="M 108 168 Q 112 166 116 167" stroke="#2a1a0a" fill="none" stroke-width="2"/>
+                    <path d="M 124 167 Q 128 166 132 168" stroke="#2a1a0a" fill="none" stroke-width="2"/>
+                    
+                    <!-- Arms -->
+                    <rect x="75" y="195" width="18" height="60" fill="#d4a574" rx="9"/>
+                    <rect x="147" y="195" width="18" height="60" fill="#d4a574" rx="9"/>
+                    <ellipse cx="84" cy="255" rx="12" ry="10" fill="#d4a574"/>
+                    <ellipse cx="156" cy="255" rx="12" ry="10" fill="#d4a574"/>
+                    
+                    <!-- Counter -->
+                    <rect x="30" y="250" width="220" height="50" fill="#8b6f47"/>
+                    <rect x="30" y="250" width="220" height="8" fill="#6b5344"/>
+                    
+                    <!-- Empty espresso machine -->
+                    <rect x="200" y="220" width="50" height="60" fill="#333" rx="3"/>
+                    <circle cx="225" cy="235" r="8" fill="#555"/>
+                    <rect x="210" y="270" width="30" height="10" fill="#444"/>
+                    
+                    <!-- Empty chair/stool -->
+                    <rect x="300" y="240" width="35" height="50" fill="#a67c52"/>
+                    <rect x="295" y="235" width="45" height="8" fill="#8b6f47" rx="4"/>
+                </svg>
+                <div class="story-text">
+                    <h3>Some days, the shop feels quieter than it should</h3>
+                    <p>You pour your heart into your craft, but reaching new customers feels impossible</p>
+                </div>
             </div>
             
-            <div class="benefit-item">
-                <strong>🚀 Early Mover Advantage</strong><br>
-                <span style="opacity: 0.8;">Join the largest marketplace of real-world experiences as it's being built. Position your business at the center of this growing economy.</span>
+            <div class="story-panel">
+                <svg class="story-illustration" viewBox="0 0 400 300">
+                    <!-- Background - warm home/shop office -->
+                    <rect width="400" height="300" fill="#f5e6d3"/>
+                    
+                    <!-- Desk -->
+                    <rect x="80" y="200" width="240" height="100" fill="#8b6f47"/>
+                    <rect x="80" y="200" width="240" height="12" fill="#6b5344"/>
+                    
+                    <!-- Laptop - open, glowing -->
+                    <rect x="150" y="150" width="120" height="8" fill="#333"/>
+                    <rect x="145" y="158" width="130" height="85" fill="#2a2a2a" rx="3"/>
+                    <rect x="150" y="163" width="120" height="75" fill="#667eea"/>
+                    
+                    <!-- Otherside on screen -->
+                    <text x="210" y="190" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Otherside</text>
+                    <text x="210" y="210" font-size="11" fill="#e8f4f8" text-anchor="middle">#YourCraftExperience</text>
+                    <circle cx="190" cy="220" r="3" fill="#4CAF50"/>
+                    <circle cx="200" cy="220" r="3" fill="#4CAF50"/>
+                    <circle cx="210" cy="220" r="3" fill="#4CAF50"/>
+                    
+                    <!-- Person sitting at laptop - excited -->
+                    <circle cx="200" cy="110" r="30" fill="#d4a574"/>
+                    <!-- Hair - woman with ponytail -->
+                    <ellipse cx="200" cy="105" rx="31" ry="26" fill="#4a3426"/>
+                    <ellipse cx="232" cy="110" rx="11" ry="23" fill="#4a3426"/>
+                    <!-- Face - excited expression -->
+                    <ellipse cx="193" cy="113" rx="4" ry="6" fill="#2a1a0a"/>
+                    <ellipse cx="207" cy="113" rx="4" ry="6" fill="#2a1a0a"/>
+                    <circle cx="193" cy="113" r="2" fill="#fff"/>
+                    <circle cx="207" cy="113" r="2" fill="#fff"/>
+                    <path d="M 192 123 Q 200 128 208 123" stroke="#2a1a0a" fill="none" stroke-width="2.5"/>
+                    <ellipse cx="188" cy="106" rx="8" ry="3" fill="#2a1a0a"/>
+                    <ellipse cx="212" cy="106" rx="8" ry="3" fill="#2a1a0a"/>
+                    
+                    <!-- Body leaning forward -->
+                    <ellipse cx="200" cy="155" rx="40" ry="38" fill="#c17c5a"/>
+                    
+                    <!-- Arms typing -->
+                    <ellipse cx="165" cy="180" rx="15" ry="40" fill="#d4a574" transform="rotate(-20 165 180)"/>
+                    <ellipse cx="235" cy="180" rx="15" ry="40" fill="#d4a574" transform="rotate(20 235 180)"/>
+                    <ellipse cx="158" cy="210" rx="11" ry="8" fill="#d4a574"/>
+                    <ellipse cx="242" cy="210" rx="11" ry="8" fill="#d4a574"/>
+                    
+                    <!-- Light bulb moment -->
+                    <circle cx="260" cy="60" r="20" fill="#ffd700" opacity="0.3"/>
+                    <circle cx="260" cy="60" r="16" fill="#ffd700"/>
+                    <line x1="260" y1="44" x2="260" y2="36" stroke="#ffd700" stroke-width="3"/>
+                    <line x1="276" y1="60" x2="284" y2="60" stroke="#ffd700" stroke-width="3"/>
+                    <line x1="244" y1="60" x2="236" y2="60" stroke="#ffd700" stroke-width="3"/>
+                    <line x1="271" y1="49" x2="277" y2="43" stroke="#ffd700" stroke-width="3"/>
+                    <line x1="249" y1="49" x2="243" y2="43" stroke="#ffd700" stroke-width="3"/>
+                    <rect x="256" y="76" width="8" height="10" fill="#daa520" rx="1"/>
+                    <rect x="254" y="86" width="12" height="4" fill="#daa520"/>
+                    
+                    <!-- Coffee cup on desk -->
+                    <ellipse cx="100" cy="210" rx="12" ry="4" fill="#6b5344"/>
+                    <rect x="88" y="200" width="24" height="10" fill="#8b6f47" rx="2"/>
+                    <path d="M 88 205 Q 88 195 88 200" stroke="#aaa" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <path d="M 93 205 Q 93 193 93 198" stroke="#aaa" stroke-width="1.5" fill="none" opacity="0.6"/>
+                </svg>
+                <div class="story-text">
+                    <h3>That's when they find Otherside</h3>
+                    <p>A way to share your craft story and earn while doing what you love</p>
+                </div>
             </div>
             
-            <div class="benefit-item">
-                <strong>🎯 Zero Disruption</strong><br>
-                <span style="opacity: 0.8;">Observers stay out of your way. They're there to watch, not interfere with your workflow.</span>
+            <div class="story-panel">
+                <svg class="story-illustration" viewBox="0 0 400 300">
+                    <!-- Background - coffee shop -->
+                    <rect width="400" height="300" fill="#e8d5c4"/>
+                    
+                    <!-- Plants/decor -->
+                    <ellipse cx="350" cy="100" rx="25" ry="35" fill="#5a7c5a"/>
+                    <ellipse cx="350" cy="85" rx="20" ry="25" fill="#6a9c6a"/>
+                    <rect x="340" y="100" width="20" height="30" fill="#8b6f47"/>
+                    
+                    <!-- Counter/bar -->
+                    <rect x="50" y="220" width="300" height="80" fill="#8b6f47"/>
+                    <rect x="50" y="220" width="300" height="10" fill="#6b5344"/>
+                    
+                    <!-- Espresso machine -->
+                    <rect x="260" y="180" width="60" height="70" fill="#2a2a2a" rx="4"/>
+                    <circle cx="290" cy="200" r="12" fill="#444"/>
+                    <circle cx="290" cy="200" r="8" fill="#555"/>
+                    <rect x="270" y="240" width="40" height="10" fill="#333"/>
+                    <!-- Steam -->
+                    <path d="M 280 170 Q 282 160 280 150" stroke="#ccc" stroke-width="2" fill="none" opacity="0.5"/>
+                    <path d="M 290 168 Q 292 158 290 148" stroke="#ccc" stroke-width="2" fill="none" opacity="0.5"/>
+                    <path d="M 300 170 Q 302 160 300 150" stroke="#ccc" stroke-width="2" fill="none" opacity="0.5"/>
+                    
+                    <!-- Barista - making coffee -->
+                    <circle cx="140" cy="170" r="28" fill="#c9886f"/>
+                    <ellipse cx="140" cy="165" rx="29" ry="24" fill="#3a2a1a"/>
+                    <ellipse cx="133" cy="173" rx="3" ry="5" fill="#1a0a0a"/>
+                    <ellipse cx="147" cy="173" rx="3" ry="5" fill="#1a0a0a"/>
+                    <path d="M 135 182 Q 140 185 145 182" stroke="#1a0a0a" fill="none" stroke-width="2"/>
+                    <ellipse cx="140" cy="208" rx="38" ry="45" fill="#b87860"/>
+                    <!-- Apron -->
+                    <rect x="110" y="195" width="60" height="70" fill="#4a4a4a"/>
+                    <rect x="118" y="195" width="44" height="4" fill="#333"/>
+                    <!-- Arms working -->
+                    <rect x="100" y="200" width="16" height="50" fill="#c9886f" rx="8"/>
+                    <ellipse cx="108" cy="250" rx="10" ry="8" fill="#c9886f"/>
+                    <rect x="164" y="200" width="16" height="50" fill="#c9886f" rx="8"/>
+                    <!-- Hand holding portafilter -->
+                    <ellipse cx="190" cy="245" rx="12" ry="9" fill="#c9886f"/>
+                    <rect x="185" y="240" width="25" height="8" fill="#333"/>
+                    <circle cx="210" cy="244" r="10" fill="#444"/>
+                    
+                    <!-- Observer - young person watching with interest -->
+                    <circle cx="240" cy="175" r="26" fill="#e8b4a0"/>
+                    <ellipse cx="240" cy="170" rx="27" ry="22" fill="#5a4a3a"/>
+                    <ellipse cx="234" cy="178" rx="3" ry="5" fill="#2a1a1a"/>
+                    <ellipse cx="246" cy="178" rx="3" ry="5" fill="#2a1a1a"/>
+                    <circle cx="234" cy="178" r="1.5" fill="#fff"/>
+                    <circle cx="246" cy="178" r="1.5" fill="#fff"/>
+                    <path d="M 236 187 Q 240 189 244 187" stroke="#2a1a1a" fill="none" stroke-width="1.5"/>
+                    <ellipse cx="240" cy="208" rx="36" ry="42" fill="#d4a574"/>
+                    <!-- Casual shirt -->
+                    <rect x="210" y="195" width="60" height="65" fill="#6b8ab5"/>
+                    <!-- Arms observing -->
+                    <rect x="195" y="205" width="15" height="45" fill="#e8b4a0" rx="7"/>
+                    <rect x="250" y="205" width="15" height="45" fill="#e8b4a0" rx="7"/>
+                    
+                    <!-- Coffee cups being made -->
+                    <ellipse cx="180" cy="235" rx="10" ry="3" fill="#6b5344"/>
+                    <rect x="170" y="225" width="20" height="10" fill="#fff" rx="2"/>
+                    
+                    <!-- Notebook in observer's hand -->
+                    <rect x="195" y="240" width="18" height="25" fill="#fff"/>
+                    <line x1="197" y1="245" x2="211" y2="245" stroke="#667eea" stroke-width="1"/>
+                    <line x1="197" y1="250" x2="211" y2="250" stroke="#667eea" stroke-width="1"/>
+                    <line x1="197" y1="255" x2="211" y2="255" stroke="#667eea" stroke-width="1"/>
+                </svg>
+                <div class="story-text">
+                    <h3>Guests join in, observe, and connect with your craft</h3>
+                    <p>They experience the real thing—the sounds, smells, and skill behind every creation</p>
+                </div>
             </div>
             
-            <div class="benefit-item">
-                <strong>📅 You Control the Schedule</strong><br>
-                <span style="opacity: 0.8;">Set your available times. Cancel anytime. You're in complete control of when people can observe.</span>
+            <div class="story-panel">
+                <svg class="story-illustration" viewBox="0 0 400 300">
+                    <!-- Background -->
+                    <rect width="400" height="300" fill="#f5e6d3"/>
+                    
+                    <!-- Three diverse people sharing -->
+                    <!-- Person 1 - left -->
+                    <circle cx="80" cy="140" r="28" fill="#8b6856"/>
+                    <ellipse cx="80" cy="135" rx="29" ry="24" fill="#2a1a0a"/>
+                    <ellipse cx="74" cy="143" rx="3" ry="5" fill="#0a0a0a"/>
+                    <ellipse cx="86" cy="143" rx="3" ry="5" fill="#0a0a0a"/>
+                    <circle cx="74" cy="143" r="1.5" fill="#fff"/>
+                    <circle cx="86" cy="143" r="1.5" fill="#fff"/>
+                    <path d="M 75 152 Q 80 156 85 152" stroke="#0a0a0a" fill="none" stroke-width="2"/>
+                    <ellipse cx="80" cy="180" rx="36" ry="44" fill="#a6856f"/>
+                    <rect x="50" y="170" width="60" height="60" fill="#7a9ab5"/>
+                    <rect x="42" y="180" width="16" height="50" fill="#8b6856" rx="8"/>
+                    <rect x="98" y="180" width="16" height="50" fill="#8b6856" rx="8"/>
+                    <ellipse cx="50" cy="230" rx="10" ry="8" fill="#8b6856"/>
+                    <ellipse cx="106" cy="230" rx="10" ry="8" fill="#8b6856"/>
+                    
+                    <!-- Person 2 - middle with phone showing experience -->
+                    <circle cx="200" cy="135" r="28" fill="#d4a574"/>
+                    <ellipse cx="200" cy="130" rx="29" ry="24" fill="#5a4030"/>
+                    <ellipse cx="194" cy="138" rx="3" ry="5" fill="#1a0a0a"/>
+                    <ellipse cx="206" cy="138" rx="3" ry="5" fill="#1a0a0a"/>
+                    <circle cx="194" cy="138" r="1.5" fill="#fff"/>
+                    <circle cx="206" cy="138" r="1.5" fill="#fff"/>
+                    <path d="M 195 147 Q 200 151 205 147" stroke="#1a0a0a" fill="none" stroke-width="2"/>
+                    <ellipse cx="200" cy="175" rx="36" ry="44" fill="#e8b4a0"/>
+                    <rect x="170" y="165" width="60" height="60" fill="#c17c5a"/>
+                    <rect x="162" y="175" width="16" height="50" fill="#d4a574" rx="8"/>
+                    <rect x="218" y="175" width="16" height="50" fill="#d4a574" rx="8"/>
+                    
+                    <!-- Phone in hand -->
+                    <rect x="168" y="220" width="35" height="60" fill="#1a1a1a" rx="4"/>
+                    <rect x="171" y="225" width="29" height="48" fill="#667eea"/>
+                    <!-- Coffee cup image on phone -->
+                    <ellipse cx="185" cy="245" rx="8" ry="2" fill="#8b6f47"/>
+                    <rect x="177" y="238" width="16" height="7" fill="#fff" rx="1"/>
+                    <path d="M 177 242 Q 177 236 177 238" stroke="#ccc" stroke-width="1" fill="none" opacity="0.6"/>
+                    <circle cx="185" cy="260" r="3" fill="#4CAF50"/>
+                    
+                    <!-- Person 3 - right, leaning in interested -->
+                    <circle cx="320" cy="140" r="28" fill="#c9886f"/>
+                    <ellipse cx="320" cy="135" rx="29" ry="24" fill="#4a3426"/>
+                    <ellipse cx="314" cy="143" rx="3" ry="5" fill="#1a0a0a"/>
+                    <ellipse cx="326" cy="143" rx="3" ry="5" fill="#1a0a0a"/>
+                    <circle cx="314" cy="143" r="1.5" fill="#fff"/>
+                    <circle cx="326" cy="143" r="1.5" fill="#fff"/>
+                    <path d="M 315 152 Q 320 156 325 152" stroke="#1a0a0a" fill="none" stroke-width="2"/>
+                    <ellipse cx="320" cy="180" rx="36" ry="44" fill="#d4a574"/>
+                    <rect x="290" y="170" width="60" height="60" fill="#8b7355"/>
+                    <rect x="282" y="180" width="16" height="50" fill="#c9886f" rx="8"/>
+                    <rect x="338" y="180" width="16" height="50" fill="#c9886f" rx="8"/>
+                    
+                    <!-- Speech/connection bubbles -->
+                    <circle cx="130" cy="100" r="4" fill="#667eea" opacity="0.5"/>
+                    <circle cx="142" cy="92" r="6" fill="#667eea" opacity="0.6"/>
+                    <circle cx="156" cy="88" r="8" fill="#667eea" opacity="0.7"/>
+                    
+                    <circle cx="244" cy="95" r="4" fill="#ffd700" opacity="0.5"/>
+                    <circle cx="256" cy="87" r="6" fill="#ffd700" opacity="0.6"/>
+                    <circle cx="270" cy="83" r="8" fill="#ffd700" opacity="0.7"/>
+                    
+                    <!-- Coffee cups/icons floating -->
+                    <ellipse cx="160" cy="80" rx="6" ry="2" fill="#8b6f47"/>
+                    <rect x="154" y="74" width="12" height="6" fill="#fff" rx="1"/>
+                    
+                    <ellipse cx="275" cy="75" rx="6" ry="2" fill="#8b6f47"/>
+                    <rect x="269" y="69" width="12" height="6" fill="#fff" rx="1"/>
+                </svg>
+                <div class="story-text">
+                    <h3>Your story spreads—naturally, beautifully</h3>
+                    <p>Happy observers become advocates. Word spreads. Your craft reaches people who truly appreciate it</p>
+                </div>
             </div>
             
-            <div class="benefit-item">
-                <strong>💳 Automatic Payments</strong><br>
-                <span style="opacity: 0.8;">We handle all billing, payments, and customer management. Money hits your account automatically.</span>
+            <div class="story-panel">
+                <svg class="story-illustration" viewBox="0 0 400 300">
+                    <!-- Background - thriving shop -->
+                    <rect width="400" height="300" fill="#e8d5c4"/>
+                    
+                    <!-- Window with afternoon light -->
+                    <rect x="280" y="30" width="100" height="120" fill="#ffd89b" opacity="0.3"/>
+                    <line x1="330" y1="30" x2="330" y2="150" stroke="#8b7355" stroke-width="3"/>
+                    <line x1="280" y1="90" x2="380" y2="90" stroke="#8b7355" stroke-width="3"/>
+                    
+                    <!-- Busy counter -->
+                    <rect x="30" y="220" width="340" height="80" fill="#8b6f47"/>
+                    <rect x="30" y="220" width="340" height="10" fill="#6b5344"/>
+                    
+                    <!-- Multiple customers - diverse group -->
+                    <!-- Customer 1 -->
+                    <circle cx="80" cy="175" r="22" fill="#8b6856"/>
+                    <ellipse cx="80" cy="171" rx="23" ry="19" fill="#2a1a0a"/>
+                    <ellipse cx="80" cy="200" rx="28" ry="35" fill="#a6856f"/>
+                    <rect x="56" y="190" width="48" height="50" fill="#5a7c8b"/>
+                    
+                    <!-- Customer 2 with coffee cup -->
+                    <circle cx="160" cy="170" r="22" fill="#d4a574"/>
+                    <ellipse cx="160" cy="166" rx="23" ry="19" fill="#5a4030"/>
+                    <ellipse cx="160" cy="195" rx="28" ry="35" fill="#e8b4a0"/>
+                    <rect x="136" y="185" width="48" height="50" fill="#c17c5a"/>
+                    <!-- Coffee cup in hand -->
+                    <ellipse cx="130" cy="215" rx="8" ry="2" fill="#6b5344"/>
+                    <rect x="122" y="208" width="16" height="7" fill="#fff" rx="1"/>
+                    
+                    <!-- Barista - happy and busy -->
+                    <circle cx="240" cy="165" r="26" fill="#c9886f"/>
+                    <ellipse cx="240" cy="160" rx="27" ry="22" fill="#3a2a1a"/>
+                    <ellipse cx="234" cy="168" rx="3" ry="5" fill="#1a0a0a"/>
+                    <ellipse cx="246" cy="168" rx="3" ry="5" fill="#1a0a0a"/>
+                    <circle cx="234" cy="168" r="1.5" fill="#fff"/>
+                    <circle cx="246" cy="168" r="1.5" fill="#fff"/>
+                    <!-- Big smile -->
+                    <path d="M 233 176 Q 240 183 247 176" stroke="#1a0a0a" fill="none" stroke-width="2.5"/>
+                    <ellipse cx="240" cy="200" rx="35" ry="42" fill="#d4a574"/>
+                    <!-- Apron -->
+                    <rect x="212" y="188" width="56" height="65" fill="#4a4a4a"/>
+                    <!-- Arms actively working -->
+                    <rect x="200" y="195" width="15" height="48" fill="#c9886f" rx="7"/>
+                    <rect x="265" y="195" width="15" height="48" fill="#c9886f" rx="7"/>
+                    
+                    <!-- Customer 3 - observer with notebook -->
+                    <circle cx="320" cy="173" r="22" fill="#c17c5a"/>
+                    <ellipse cx="320" cy="169" rx="23" ry="19" fill="#4a3426"/>
+                    <ellipse cx="320" cy="198" rx="28" ry="35" fill="#d4a574"/>
+                    <rect x="296" y="188" width="48" height="50" fill="#7a9ab5"/>
+                    
+                    <!-- Money/success indicators floating -->
+                    <text x="100" y="130" font-size="28" fill="#4CAF50" opacity="0.6" font-weight="bold">$</text>
+                    <text x="180" y="120" font-size="28" fill="#4CAF50" opacity="0.6" font-weight="bold">$</text>
+                    <text x="280" y="125" font-size="28" fill="#4CAF50" opacity="0.6" font-weight="bold">$</text>
+                    
+                    <!-- Happy vibes - sparkles -->
+                    <circle cx="70" cy="140" r="3" fill="#ffd700"/>
+                    <circle cx="150" cy="135" r="3" fill="#ffd700"/>
+                    <circle cx="230" cy="130" r="3" fill="#ffd700"/>
+                    <circle cx="310" cy="138" r="3" fill="#ffd700"/>
+                    
+                    <!-- Equipment actively being used -->
+                    <rect x="190" y="210" width="30" height="40" fill="#2a2a2a" rx="2"/>
+                    <circle cx="205" cy="225" r="6" fill="#555"/>
+                    <!-- Steam from machine -->
+                    <path d="M 200 205 Q 202 195 200 185" stroke="#ccc" stroke-width="2" fill="none" opacity="0.6"/>
+                    <path d="M 210 205 Q 212 195 210 185" stroke="#ccc" stroke-width="2" fill="none" opacity="0.6"/>
+                </svg>
+                <div class="story-text">
+                    <h3>Join Otherside—where craft meets community</h3>
+                    <p>Turn your passion into profit. Your schedule. Your craft. Your success story.</p>
+                </div>
             </div>
-            
-            <div class="benefit-item">
-                <strong>🎬 You're Already Entertaining For Free</strong><br>
-                <span style="opacity: 0.8;">People watch craft videos religiously on social media. You create the same content daily - now get paid directly by your audience.</span>
-            </div>
-            
-            <div class="benefit-item">
-                <strong>🛡️ Vetted Customers</strong><br>
-                <span style="opacity: 0.8;">All observers are pre-screened. Professional boundaries maintained. No weirdos, just curious people.</span>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <a href="#" class="main-cta">Join Otherside Platform</a>
-            <p>Setup takes 5 minutes. Start earning this week.</p>
         </div>
     </div>
 
+    <div class="calculator">
+        <h2>💰 Your Revenue Potential</h2>
+        
+        <div class="input-group">
+            <label>Sessions per week: <span id="sessions-value">5</span></label>
+            <input type="range" min="1" max="20" value="5" class="slider" id="sessions">
+        </div>
+        
+        <div class="input-group">
+            <label>Hours per session: <span id="hours-value">1</span></label>
+            <input type="range" min="1" max="4" value="1" class="slider" id="hours">
+        </div>
+        
+        <div class="result-box">
+            <h3>Monthly Revenue</h3>
+            <div class="big-number" id="monthly">$1,000</div>
+            
+            <h3>Annual Revenue</h3>
+            <div class="big-number" id="annual">$12,000</div>
+        </div>
+    </div>
+    
+    <div class="benefits">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Why Join Now?</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">🌐</span>
+                <h3>Massive Demand</h3>
+                <p>Bridge the gap between online content and real experiences</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">🚀</span>
+                <h3>Early Mover</h3>
+                <p>Join the marketplace as it's being built</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">🎯</span>
+                <h3>Zero Disruption</h3>
+                <p>Observers stay out of your way</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">📅</span>
+                <h3>Full Control</h3>
+                <p>You decide when people can observe</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">💳</span>
+                <h3>Auto Payments</h3>
+                <p>Money hits your account automatically</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">🛡️</span>
+                <h3>Vetted Customers</h3>
+                <p>Pre-screened, professional observers only</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cta-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Ready to Start Earning?</h2>
+        <a href="#signup" class="cta-button">🎯 Join the Marketplace</a>
+    </div>
+    
     <script>
-        function calculateRevenue() {
-            const workDays = parseInt(document.getElementById('workDays').value);
-            const sessionsPerDay = parseInt(document.getElementById('sessionsPerDay').value);
+        const sessionsSlider = document.getElementById('sessions');
+        const hoursSlider = document.getElementById('hours');
+        const sessionsValue = document.getElementById('sessions-value');
+        const hoursValue = document.getElementById('hours-value');
+        const monthlyDisplay = document.getElementById('monthly');
+        const annualDisplay = document.getElementById('annual');
+        
+        function calculate() {
+            const sessions = parseInt(sessionsSlider.value);
+            const hours = parseInt(hoursSlider.value);
+            const rate = 50;
             
-            const dailyRevenue = sessionsPerDay * 50; // $50 per session
-            const weeklyRevenue = dailyRevenue * workDays;
-            const monthlyRevenue = weeklyRevenue * 4.3; // Average weeks per month
-            const annualRevenue = monthlyRevenue * 12;
+            const weekly = sessions * hours * rate;
+            const monthly = weekly * 4;
+            const annual = monthly * 12;
             
-            // Update display
-            document.getElementById('monthlyRevenue').textContent = '$' + Math.round(monthlyRevenue).toLocaleString();
-            document.getElementById('annualRevenue').textContent = '$' + Math.round(annualRevenue).toLocaleString();
-            document.getElementById('sessions').innerHTML = `
-                <div style="margin-top: 15px; font-size: 0.9em;">
-                    <div>${sessionsPerDay} sessions/day × ${workDays} days/week</div>
-                    <div>$50 per 1-hour session</div>
-                    <div>1 observer at a time</div>
-                    <div style="margin-top: 10px; font-style: italic; opacity: 0.8;">Just work normally. They watch. You earn.</div>
-                </div>
-            `;
+            sessionsValue.textContent = sessions;
+            hoursValue.textContent = hours;
+            monthlyDisplay.textContent = '$' + monthly.toLocaleString();
+            annualDisplay.textContent = '$' + annual.toLocaleString();
         }
         
-        // Calculate initial values
-        calculateRevenue();
+        sessionsSlider.addEventListener('input', calculate);
+        hoursSlider.addEventListener('input', calculate);
+        
+        calculate();
+        
+        // Experience visuals for different business types
+        const experiences = {
+            boba: {
+                title: "🧋 Behind the Boba Counter",
+                subtitle: "Watch the art of bubble tea come to life",
+                steps: [
+                    {
+                        icon: "👋",
+                        title: "Welcome & Introduction",
+                        description: "You arrive and get a warm greeting. The owner gives you a quick overview and invites you behind the counter."
+                    },
+                    {
+                        icon: "🧊",
+                        title: "The Prep Station",
+                        description: "Watch as they measure the perfect tea blend, brew it fresh, and prepare the signature tapioca pearls from scratch."
+                    },
+                    {
+                        icon: "🥤",
+                        title: "The Art of Assembly",
+                        description: "See the precise technique - layering flavors, adding toppings, the perfect ice-to-liquid ratio. Every detail matters."
+                    },
+                    {
+                        icon: "✨",
+                        title: "The Experience",
+                        description: "Feel the rhythm of the shop, learn trade secrets, smell the fresh ingredients. You're not just watching - you're experiencing the craft."
+                    }
+                ]
+            },
+            coffee: {
+                title: "☕ Inside the Coffee Lab",
+                subtitle: "Experience the science and soul of coffee",
+                steps: [
+                    {
+                        icon: "👋",
+                        title: "Welcome to the Bar",
+                        description: "Step behind the espresso machine. The barista explains what you'll witness in the next hour."
+                    },
+                    {
+                        icon: "☕",
+                        title: "Bean Selection & Grinding",
+                        description: "Watch them select beans, explain origin stories, and dial in the perfect grind. The aroma fills the space."
+                    },
+                    {
+                        icon: "🔥",
+                        title: "Pulling the Perfect Shot",
+                        description: "See temperature precision, pressure control, and timing. Every second counts. The machine hisses and steams."
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Latte Art & Mastery",
+                        description: "Watch milk transform into microfoam, then witness the pour that creates beautiful art. It's science meeting creativity."
+                    }
+                ]
+            },
+            pottery: {
+                title: "🏺 At the Pottery Wheel",
+                subtitle: "Feel the magic of clay taking shape",
+                steps: [
+                    {
+                        icon: "👋",
+                        title: "Studio Welcome",
+                        description: "Enter the creative space filled with clay dust and finished pieces. The artist explains their process."
+                    },
+                    {
+                        icon: "🪨",
+                        title: "Clay Preparation",
+                        description: "Watch them wedge the clay, removing air bubbles. Feel the texture, understand why this step matters."
+                    },
+                    {
+                        icon: "🌀",
+                        title: "Throwing on the Wheel",
+                        description: "The wheel spins. Hands guide wet clay from a lump into a form. It's mesmerizing. You see mistakes happen and get corrected instantly."
+                    },
+                    {
+                        icon: "✨",
+                        title: "Shaping & Finishing",
+                        description: "Watch tools carve details, hands smooth surfaces. Every touch shapes the final piece. The transformation is complete."
+                    }
+                ]
+            },
+            bakery: {
+                title: "🥐 Inside the Bakery Kitchen",
+                subtitle: "Where flour becomes magic",
+                steps: [
+                    {
+                        icon: "👋",
+                        title: "Early Morning Energy",
+                        description: "You arrive to the smell of fresh dough. The baker welcomes you into their domain, flour dust everywhere."
+                    },
+                    {
+                        icon: "🌾",
+                        title: "Dough Preparation",
+                        description: "Watch them measure ingredients by feel, mix, knead, and test dough consistency. Years of muscle memory in action."
+                    },
+                    {
+                        icon: "🔪",
+                        title: "Shaping & Technique",
+                        description: "See croissants get folded dozens of times, bread scored with precision. Each technique tells a story."
+                    },
+                    {
+                        icon: "🔥",
+                        title: "The Oven Dance",
+                        description: "Feel the heat blast as the oven opens. Watch golden perfection emerge. Hear the crust crackle. You're in the moment."
+                    }
+                ]
+            },
+            tattoo: {
+                title: "🎨 Inside the Tattoo Studio",
+                subtitle: "Where art meets skin",
+                steps: [
+                    {
+                        icon: "👋",
+                        title: "Studio Introduction",
+                        description: "Step into the clean, creative space. The artist explains their setup, sterilization process, and what you'll observe."
+                    },
+                    {
+                        icon: "✏️",
+                        title: "Design & Preparation",
+                        description: "Watch them sketch, refine designs, create the stencil. See how they consult with clients and adjust until it's perfect."
+                    },
+                    {
+                        icon: "🎨",
+                        title: "The Tattoo Process",
+                        description: "Observe the steady hand, the focus, the technique. See how different needles create different effects. It's precision art."
+                    },
+                    {
+                        icon: "✨",
+                        title: "The Reveal",
+                        description: "Watch the final wipe, the client's reaction. Feel the emotion in the room. This is permanent art being born."
+                    }
+                ]
+            },
+            woodwork: {
+                title: "🪵 In the Woodworking Shop",
+                subtitle: "Where wood becomes heirloom",
+                steps: [
+                    {
+                        icon: "👋",
+                        title: "Shop Tour",
+                        description: "Enter the shop filled with sawdust and the smell of fresh wood. The craftsman shows you around their workspace."
+                    },
+                    {
+                        icon: "📏",
+                        title: "Measuring & Marking",
+                        description: "Watch them select wood, explain grain patterns, measure twice. Precision matters. Every mark has purpose."
+                    },
+                    {
+                        icon: "🪚",
+                        title: "Cutting & Shaping",
+                        description: "See tools in action - table saws, chisels, planes. Feel the vibration, hear the sounds, smell the sawdust."
+                    },
+                    {
+                        icon: "✨",
+                        title: "Assembly & Finishing",
+                        description: "Watch pieces come together, joints fit perfectly. See sanding reveal the wood's beauty. Touch the smooth finish."
+                    }
+                ]
+            }
+        };
+        
+        function updateExperience() {
+            const businessType = document.getElementById('business-type').value;
+            const experience = experiences[businessType];
+            const container = document.getElementById('experience-visual');
+            
+            // Add loading animation
+            container.classList.add('loading-animation');
+            
+            setTimeout(() => {
+                let html = `
+                    <h3 class="experience-title">${experience.title}</h3>
+                    <p class="experience-subtitle">${experience.subtitle}</p>
+                    <div class="journey-steps">
+                `;
+                
+                experience.steps.forEach((step, index) => {
+                    html += `
+                        <div class="journey-card">
+                            <span class="step-number">${index + 1}</span>
+                            <span class="journey-icon">${step.icon}</span>
+                            <h3>${step.title}</h3>
+                            <p>${step.description}</p>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+                container.innerHTML = html;
+                
+                // Remove loading animation
+                container.classList.remove('loading-animation');
+            }, 500);
+        }
+        
+        document.getElementById('business-type').addEventListener('change', updateExperience);
+        updateExperience();
     </script>
 </body>
 </html>
