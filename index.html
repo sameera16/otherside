@@ -5,212 +5,330 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otherside Platform - Choose Your Experience</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 20px; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
+        
         .container { 
-            max-width: 1000px; 
+            max-width: 1200px; 
             margin: 0 auto; 
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+            padding: 0 24px;
         }
+        
+        header {
+            padding: 24px 0;
+            position: relative;
+        }
+        
         h1 { 
-            color: white; 
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
+        
         .subtitle {
             text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            color: #888888;
+            margin-bottom: 64px;
+            font-weight: 400;
         }
-        .calculator {
-            background: rgba(255,255,255,0.95);
-            color: #333;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        
+        .hero-section {
+            padding: 80px 0;
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
         }
-        .category { 
-            margin: 30px 0; 
-            padding: 20px; 
-            background: rgba(255,255,255,0.1); 
-            border-radius: 15px;
-            border-left: 5px solid #4ecdc4;
-        }
-        h2 { 
-            color: #4ecdc4; 
-            margin-bottom: 20px;
-        }
+        
         .choice-section {
-            background: rgba(255,255,255,0.95);
-            color: #333;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 80px 0;
+            position: relative;
         }
+        
+        .choice-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+        
         .path-options {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
         }
+        
         .path-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 3px solid transparent;
-            transition: all 0.3s;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 1px solid #333333;
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
         }
+        
+        .path-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        
         .path-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            border-color: #555555;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
-        .customer-path {
-            border-color: #667eea;
+        
+        .customer-path:hover {
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
         }
-        .business-path {
-            border-color: #38a169;
+        
+        .business-path:hover {
+            box-shadow: 0 25px 50px rgba(16, 185, 129, 0.2);
         }
+        
+        .path-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .path-card p {
+            color: #cccccc;
+            margin-bottom: 24px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
         .features {
-            margin: 20px 0;
-            text-align: left;
+            margin: 24px 0;
         }
+        
         .feature {
-            margin: 8px 0;
-            color: #666;
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            color: #aaaaaa;
+            font-size: 0.95rem;
         }
+        
+        .feature::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: 600;
+            margin-right: 12px;
+            font-size: 1rem;
+        }
+        
         .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin-top: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 24px;
         }
+        
         .customer-cta {
-            background: #667eea;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
         }
+        
         .customer-cta:hover {
-            background: #5a67d8;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transform: translateY(-2px);
         }
+        
         .business-cta {
-            background: #38a169;
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
             color: white;
         }
+        
         .business-cta:hover {
-            background: #2f855a;
+            background: linear-gradient(135deg, #059669 0%, #065f46 100%);
+            transform: translateY(-2px);
         }
+        
         .how-it-works {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
+            padding: 80px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(16, 185, 129, 0.05) 50%, transparent 100%);
         }
+        
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+        
         .step {
             text-align: center;
+            position: relative;
         }
+        
         .step-number {
-            background: #4ecdc4;
+            background: linear-gradient(135deg, #10b981 0%, #047857 100%);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         }
-        .step-content h4 {
-            margin: 10px 0;
-            color: #4ecdc4;
+        
+        .step h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #ffffff;
         }
+        
+        .step p {
+            color: #aaaaaa;
+            font-size: 1rem;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
             .path-options {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
+            
+            .path-card {
+                padding: 32px 24px;
+            }
+            
+            .hero-section,
+            .choice-section,
             .how-it-works {
-                grid-template-columns: 1fr;
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .choice-section h2,
+            .how-it-works h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>👁️ Otherside Platform</h1>
-        <p class="subtitle">Creating the largest marketplace of real-world experiences.</p>
-        
-        <div class="choice-section">
+    <section class="hero-section">
+        <div class="container">
+            <header>
+                <h1>👁️ Otherside</h1>
+                <p class="subtitle">Creating the largest marketplace of real-world experiences.</p>
+            </header>
+        </div>
+    </section>
+    
+    <section class="choice-section">
+        <div class="container">
             <h2>Choose Your Path</h2>
             <div class="path-options">
                 <div class="path-card customer-path">
                     <h3>👁️ I Want to Watch</h3>
                     <p>You watch craft content online AND wonder what it actually feels like. Now bridge that gap - experience the real thing, unedited and authentic.</p>
                     <div class="features">
-                        <div class="feature">✓ $50 for 1 hour of pure reality</div>
-                        <div class="feature">✓ No performance, just authentic work</div>
-                        <div class="feature">✓ Bridge the gap between watching and experiencing</div>
+                        <div class="feature">$50 for 1 hour of pure reality</div>
+                        <div class="feature">No performance, just authentic work</div>
+                        <div class="feature">Bridge the gap between watching and experiencing</div>
                     </div>
-                    <a href="customer.html" class="cta-button customer-cta">Browse Experiences →</a>
+                    <a href="customer.html" class="cta-button customer-cta">Browse Experiences</a>
                 </div>
                 
                 <div class="path-card business-path">
                     <h3>💼 I Want to Earn</h3>
                     <p>Own a craft business? People watch your type of work online AND are curious about the real experience. Join the marketplace where curiosity meets authentic access.</p>
                     <div class="features">
-                        <div class="feature">✓ $50 per 1-hour session</div>
-                        <div class="feature">✓ Zero disruption to your workflow</div>
-                        <div class="feature">✓ Join the future of experience economy</div>
+                        <div class="feature">$50 per 1-hour session</div>
+                        <div class="feature">Zero disruption to your workflow</div>
+                        <div class="feature">Join the future of experience economy</div>
                     </div>
-                    <a href="business.html" class="cta-button business-cta">Join Platform →</a>
+                    <a href="business.html" class="cta-button business-cta">Join Platform</a>
                 </div>
             </div>
         </div>
-        
-        <div class="category">
-            <h2>🎯 How It Works</h2>
-            <div class="how-it-works">
+    </section>
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Businesses Join Platform</h4>
-                        <p>Craft businesses set their availability for observation sessions</p>
-                    </div>
+                    <h4>Businesses Join Platform</h4>
+                    <p>Craft businesses set their availability for observation sessions</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Curiosity Meets Real Experience</h4>
-                        <p>People pay $50 to bridge the gap between watching and experiencing</p>
-                    </div>
+                    <h4>Curiosity Meets Real Experience</h4>
+                    <p>People pay $50 to bridge the gap between watching and experiencing</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Pure Voyeurism</h4>
-                        <p>No teaching, no performance - just real people doing real work</p>
-                    </div>
+                    <h4>Pure Voyeurism</h4>
+                    <p>No teaching, no performance - just real people doing real work</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 </body>
 </html>
