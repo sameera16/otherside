@@ -1370,7 +1370,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeEmailForm()">&times;</span>
             <h2>Join Drip Dessert House on Otherside</h2>
-            <form id="joinForm" action="https://formsubmit.co/f8d7c6b5a4e3f2d1c9b8a7e6f5d4c3b2a1" method="POST">
+            <form id="joinForm" onsubmit="submitForm(event)"
                 <div class="form-group">
                     <label for="businessName">Business Name:</label>
                     <input type="text" id="businessName" name="businessName" value="Drip Dessert House" readonly>
@@ -1475,6 +1475,71 @@
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
+        }
+
+        // Form submission with masked email
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitButton = event.target.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Decode the email address (base64 encoded)
+            const encodedEmail = 'c2FtZWVyYW11ZGlnb25kYUBnbWFpbC5jb20=';
+            const email = atob(encodedEmail);
+            
+            // Create hidden form to submit to FormSubmit
+            const hiddenForm = document.createElement('form');
+            hiddenForm.method = 'POST';
+            hiddenForm.action = `https://formsubmit.co/${email}`;
+            hiddenForm.style.display = 'none';
+            
+            // Add all form data
+            Object.entries(data).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                hiddenForm.appendChild(input);
+            });
+            
+            // Add FormSubmit config
+            const subjectInput = document.createElement('input');
+            subjectInput.type = 'hidden';
+            subjectInput.name = '_subject';
+            subjectInput.value = 'New Drip Dessert House Application - Otherside';
+            hiddenForm.appendChild(subjectInput);
+            
+            const templateInput = document.createElement('input');
+            templateInput.type = 'hidden';
+            templateInput.name = '_template';
+            templateInput.value = 'table';
+            hiddenForm.appendChild(templateInput);
+            
+            const captchaInput = document.createElement('input');
+            captchaInput.type = 'hidden';
+            captchaInput.name = '_captcha';
+            captchaInput.value = 'false';
+            hiddenForm.appendChild(captchaInput);
+            
+            // Submit the form
+            document.body.appendChild(hiddenForm);
+            hiddenForm.submit();
+            
+            // Clean up and show success
+            setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                closeEmailForm();
+                alert('✅ Thank you! Your application has been submitted. We\'ll be in touch soon!');
+                event.target.reset();
+            }, 1000);
         }
 
     </script>
