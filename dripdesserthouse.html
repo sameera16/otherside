@@ -260,6 +260,22 @@
             padding: 4rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+        }
+        
+        .visual-story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 154, 158, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 209, 220, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
         }
         
         .story-grid {
@@ -385,6 +401,460 @@
             opacity: 0.9;
         }
         
+        /* Dessert Gallery Styles */
+        .dessert-gallery {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            animation: fadeInUp 0.8s ease both;
+        }
+        
+        .dessert-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .dessert-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        
+        .dessert-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .dessert-info {
+            padding: 2rem;
+            color: #333;
+        }
+        
+        .dessert-info h3 {
+            font-size: 1.8rem;
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .dessert-info p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .waffle-special {
+            animation-delay: 0.1s;
+        }
+        
+        .strawberry-special {
+            animation-delay: 0.3s;
+        }
+        
+        /* Add shimmer effect to dessert cards */
+        .dessert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+            z-index: 1;
+        }
+        
+        .dessert-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Flow Diagram Styles */
+        .flow-diagram {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem auto;
+            max-width: 1200px;
+        }
+        
+        .flow-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            animation: fadeInUp 1s ease both;
+        }
+        
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.4s; }
+        .step:nth-child(5) { animation-delay: 0.6s; }
+        
+        .step-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover .step-icon {
+            transform: scale(1.1);
+        }
+        
+        .arrow {
+            font-size: 3rem;
+            opacity: 0.5;
+            animation: slideRight 1s ease-in-out infinite;
+        }
+        
+        /* Behind Counter Styles */
+        .behind-counter {
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            padding: 4rem 2rem;
+            margin: 4rem auto;
+            max-width: 1400px;
+            border-radius: 20px;
+        }
+        
+        .experience-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .experience-card {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.6s ease both;
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-card:nth-child(1) { animation-delay: 0.1s; }
+        .experience-card:nth-child(2) { animation-delay: 0.2s; }
+        .experience-card:nth-child(3) { animation-delay: 0.3s; }
+        .experience-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .experience-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .experience-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .experience-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        /* Calculator Styles */
+        .calculator-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .calculator {
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .calculator h2 {
+            color: #ff6b9d;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            margin-bottom: 2rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ff6b9d;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ff6b9d;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .result-box {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .result-label {
+            font-size: 1.1rem;
+        }
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease both;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .benefit-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .modal-content h2 {
+            color: #ff6b9d;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b9d;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .cta-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideRight {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -450,6 +920,12 @@
     </style>
 </head>
 <body>
+    <!-- Floating dessert elements -->
+    <div class="dessert-float">🧁</div>
+    <div class="dessert-float">🍰</div>
+    <div class="dessert-float">🍩</div>
+    <div class="dessert-float">🎂</div>
+    
     <div class="hero">
         <h1>🍰 Drip Dessert House</h1>
         <p>Experience the Art of Dessert Making in Fremont</p>
@@ -468,6 +944,71 @@
         </div>
     </div>
     
+    <!-- How It Works Section -->
+    <div class="flow-diagram">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">How It Works</h2>
+        
+        <div class="flow-steps">
+            <div class="step">
+                <div class="step-icon">📅</div>
+                <h3>Set Schedule</h3>
+                <p>Choose when you're available</p>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="step">
+                <div class="step-icon">🍰</div>
+                <h3>Create Desserts</h3>
+                <p>Just your normal routine</p>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="step">
+                <div class="step-icon">💰</div>
+                <h3>Get Paid</h3>
+                <p>$50 per hour, automatic</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Behind the Counter Experience -->
+    <div class="behind-counter">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 2rem;">🍰 What Your Customers Will Experience</h2>
+        <p style="text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 3rem;">Here's the 4-step journey customers go through when they book a session at your dessert shop</p>
+        
+        <div class="experience-steps">
+            <div class="experience-card">
+                <div class="experience-number">1</div>
+                <div class="experience-icon">👋</div>
+                <h3>Welcome & Introduction</h3>
+                <p>You arrive and get a warm greeting. The pastry chef gives you a quick overview and invites you behind the counter.</p>
+            </div>
+            
+            <div class="experience-card">
+                <div class="experience-number">2</div>
+                <div class="experience-icon">🧊</div>
+                <h3>The Prep Station</h3>
+                <p>Watch as they measure perfect ingredients, temper chocolate, and prepare signature toppings from scratch.</p>
+            </div>
+            
+            <div class="experience-card">
+                <div class="experience-number">3</div>
+                <div class="experience-icon">🥤</div>
+                <h3>The Art of Assembly</h3>
+                <p>See the precise technique - layering flavors, adding toppings, the perfect chocolate-to-cream ratio. Every detail matters.</p>
+            </div>
+            
+            <div class="experience-card">
+                <div class="experience-number">4</div>
+                <div class="experience-icon">✨</div>
+                <h3>The Experience</h3>
+                <p>Feel the rhythm of the kitchen, smell the fresh ingredients. You're not just watching - you're experiencing the craft.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="value-props">
         <h2 style="text-align: center; font-size: 3rem; margin-bottom: 1rem;">Sweet Experience Awaits</h2>
         
@@ -655,6 +1196,34 @@
         </div>
     </div>
     
+    <!-- Revenue Calculator -->
+    <div class="calculator-section">
+        <div class="calculator">
+            <h2>💰 Your Revenue Potential</h2>
+            
+            <div class="input-group">
+                <label>Sessions per week: <span id="sessions-value">5</span></label>
+                <input type="range" min="1" max="20" value="5" class="slider" id="sessions">
+            </div>
+            
+            <div class="input-group">
+                <label>Hours per session: <span id="hours-value">1</span></label>
+                <input type="range" min="1" max="4" value="1" class="slider" id="hours">
+            </div>
+            
+            <div class="result-box">
+                <div class="result-item">
+                    <span class="result-label">Monthly Revenue</span>
+                    <span class="result-value" id="monthly-revenue">$1,000</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Annual Revenue</span>
+                    <span class="result-value" id="annual-revenue">$12,000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="stats-section">
         <div class="stats-grid">
             <div class="stat-item" style="animation-delay: 0.1s;">
@@ -670,19 +1239,176 @@
                 <div class="stat-label">Live & Authentic</div>
             </div>
             <div class="stat-item" style="animation-delay: 0.4s;">
-                <div class="stat-number">🍰</div>
-                <div class="stat-label">Fremont's Finest</div>
+                <div class="stat-number">🎨</div>
+                <div class="stat-label">Define Your Experience</div>
             </div>
         </div>
     </div>
     
+    <!-- Dessert Gallery Section -->
+    <!-- <div class="dessert-gallery">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 2rem; color: white;">Sweet Creations You'll Witness</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="dessert-card waffle-special">
+                    <div class="dessert-image">
+                        <!-- <Waffle with ice cream and chocolate drizzle --> 
+                        <!-- <svg viewBox="0 0 300 200" style="width: 100%; height: 200px;">
+                            <rect width="300" height="200" fill="#f4a261"/>
+                            <!-- Waffle base -->
+                            <!-- <path d="M50 120 L250 120 L230 160 L70 160 Z" fill="#deb887"/>
+                            <pattern id="waffle" patternUnits="userSpaceOnUse" width="20" height="20">
+                                <rect width="20" height="20" fill="#deb887"/>
+                                <rect x="2" y="2" width="16" height="16" fill="#cd853f"/>
+                                <rect x="4" y="4" width="12" height="12" fill="#deb887"/>
+                            </pattern>
+                            <path d="M50 120 L250 120 L230 160 L70 160 Z" fill="url(#waffle)"/>
+                            <!-- Ice cream scoops -->
+                            <!-- <circle cx="150" cy="100" r="25" fill="#fff8dc"/>
+                            <circle cx="130" cy="85" r="20" fill="#ffb6c1"/>
+                            <circle cx="170" cy="85" r="22" fill="#98fb98"/> -->
+                            <!-- Chocolate drizzle -->
+                            <!-- <path d="M100 140 Q150 120 200 140" stroke="#8b4513" stroke-width="4" fill="none"/>
+                            <path d="M90 150 Q140 130 190 150" stroke="#8b4513" stroke-width="3" fill="none"/> -->
+                            <!-- Sprinkles -->
+                            <!-- <rect x="120" y="90" width="8" height="3" fill="#ff69b4" transform="rotate(25)"/>
+                            <rect x="160" y="95" width="6" height="2" fill="#00ff7f" transform="rotate(-15)"/>
+                            <rect x="140" y="110" width="7" height="3" fill="#ff4500" transform="rotate(45)"/> -->
+                        <!-- </svg> -->
+                    <!-- </div> -->
+                    <!-- <div class="dessert-info">
+                        <h3>Signature Waffle Creation</h3>
+                        <p>Watch our chefs craft the perfect waffle base, then artistically layer ice cream and chocolate drizzle with colorful sprinkles.</p>
+                    </div> -->
+                <!-- </div> --> 
+            <!-- </div> --> 
+            
+            <!-- <div class="gallery-item">
+                <div class="dessert-card strawberry-special">
+                    <div class="dessert-image"> -->
+                        <!-- Waffle with strawberries and cream -->
+                        <!-- <svg viewBox="0 0 300 200" style="width: 100%; height: 200px;">
+                            <rect width="300" height="200" fill="#ffeaa7"/> -->
+                            <!-- Waffle base -->
+                            <!-- <ellipse cx="150" cy="130" rx="100" ry="40" fill="#deb887"/>
+                            <pattern id="waffle2" patternUnits="userSpaceOnUse" width="15" height="15">
+                                <rect width="15" height="15" fill="#deb887"/>
+                                <rect x="2" y="2" width="11" height="11" fill="#cd853f"/>
+                            </pattern>
+                            <ellipse cx="150" cy="130" rx="100" ry="40" fill="url(#waffle2)"/> -->
+                            <!-- Whipped cream -->
+                            <!-- <ellipse cx="150" cy="110" rx="60" ry="30" fill="#fffaf0"/>
+                            <ellipse cx="140" cy="95" rx="25" ry="15" fill="#fffaf0"/>
+                            <ellipse cx="160" cy="95" rx="30" ry="18" fill="#fffaf0"/> -->
+                            <!-- Strawberries -->
+                            <!-- <ellipse cx="130" cy="105" rx="8" ry="12" fill="#ff6b6b"/>
+                            <ellipse cx="170" cy="100" rx="10" ry="14" fill="#ee5a52"/>
+                            <ellipse cx="150" cy="115" rx="9" ry="13" fill="#ff7675"/>
+                            <ellipse cx="120" cy="120" rx="7" ry="10" fill="#d63031"/>
+                            <ellipse cx="180" cy="110" rx="8" ry="11" fill="#ff6b6b"/> -->
+                            <!-- Strawberry tops -->
+                            <!-- <path d="M130 93 L135 90 L125 90 Z" fill="#00b894"/>
+                            <path d="M170 86 L175 83 L165 83 Z" fill="#00b894"/>
+                            <path d="M150 102 L155 99 L145 99 Z" fill="#00b894"/> -->
+                            <!-- Chocolate drizzle -->
+                            <!-- <path d="M80 140 Q150 115 220 140" stroke="#6c5ce7" stroke-width="3" fill="none"/>
+                            <path d="M90 150 Q150 125 210 150" stroke="#a29bfe" stroke-width="2" fill="none"/> -->
+                        <!-- </svg> -->
+                    <!-- </div> -->
+                    <!-- <div class="dessert-info"> -->
+                        <!-- <h3>Fresh Strawberry Delight</h3>
+                        <p>Experience the precision of placing fresh strawberries, the art of whipped cream piping, and the final chocolate artistry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --> 
+    
+    <!-- Why Join Now Section -->
+    <div class="benefits">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Why Join Now?</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">🚀</span>
+                <h3>Early Partner</h3>
+                <p>Join Drip Dessert House as an early showcase partner on Otherside</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">💰</span>
+                <h3>Extra Revenue</h3>
+                <p>$50/hour for doing what you already do - just with observers</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">👥</span>
+                <h3>Build Community</h3>
+                <p>Connect with dessert enthusiasts and build your local fanbase</p>
+            </div>
+            
+            <div class="benefit-card">
+                <span class="benefit-icon">📈</span>
+                <h3>No Extra Work</h3>
+                <p>Keep your normal routine - just earn while people watch</p>
+            </div>
+        </div>
+    </div>
+
     <div class="cta-section">
-        <h2 style="font-size: 3rem; margin-bottom: 1rem;">Book Your Sweet Experience</h2>
-        <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem;">Ready to witness dessert mastery?</p>
+        <!-- <h2 style="font-size: 3rem; margin-bottom: 1rem;">Ready to Start Earning?</h2> -->
+        <!-- <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem;">Join the marketplace and start monetizing your craft</p> -->
         
         <div class="cta-buttons">
-            <a href="#book" class="cta-button primary">🍰 Book Dessert Experience</a>
-            <a href="#learn" class="cta-button secondary">📍 Visit Fremont Location</a>
+            <!-- <button onclick="openEmailForm()" class="cta-button primary">🎯 Join the Marketplace</button> -->
+            <button onclick="openWaitlistForm()" class="cta-button secondary">📋 Join Waitlist</button>
+        </div>
+    </div>
+
+    <!-- Email Form Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEmailForm()">&times;</span>
+            <h2>Join Drip Dessert House on Otherside</h2>
+            <form id="joinForm" action="https://formsubmit.co/f8d7c6b5a4e3f2d1c9b8a7e6f5d4c3b2a1" method="POST">
+                <div class="form-group">
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" id="businessName" name="businessName" value="Drip Dessert House" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactName">Contact Name:</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">What dessert experiences would you offer?</label>
+                    <textarea id="experience" name="experience" rows="3" placeholder="e.g., Waffle making, cake decorating, chocolate tempering..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="availability">When are you typically available?</label>
+                    <textarea id="availability" name="availability" rows="2" placeholder="e.g., Weekdays 2-6pm, Weekends 10am-4pm..."></textarea>
+                </div>
+                
+                <!-- Hidden fields for FormSubmit -->
+                <input type="hidden" name="_subject" value="New Drip Dessert House Application - Otherside">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
         </div>
     </div>
     
@@ -694,6 +1420,63 @@
             const y = (e.clientY / window.innerHeight - 0.5) * 20;
             orbit.style.transform = `translate(${x}px, ${y}px)`;
         });
+
+        // Revenue Calculator
+        function updateCalculator() {
+            const sessions = document.getElementById('sessions').value;
+            const hours = document.getElementById('hours').value;
+            
+            document.getElementById('sessions-value').textContent = sessions;
+            document.getElementById('hours-value').textContent = hours;
+            
+            const weeklyHours = sessions * hours;
+            const monthlyHours = weeklyHours * 4.33; // Average weeks per month
+            const annualHours = weeklyHours * 52;
+            
+            const monthlyRevenue = monthlyHours * 50;
+            const annualRevenue = annualHours * 50;
+            
+            document.getElementById('monthly-revenue').textContent = '$' + monthlyRevenue.toLocaleString();
+            document.getElementById('annual-revenue').textContent = '$' + annualRevenue.toLocaleString();
+        }
+
+        // Add event listeners for sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            const sessionsSlider = document.getElementById('sessions');
+            const hoursSlider = document.getElementById('hours');
+            
+            if (sessionsSlider && hoursSlider) {
+                sessionsSlider.addEventListener('input', updateCalculator);
+                hoursSlider.addEventListener('input', updateCalculator);
+                updateCalculator(); // Initial calculation
+            }
+        });
+
+        // Modal Functions
+        function openEmailForm() {
+            document.getElementById('emailModal').style.display = 'block';
+            // Clear any pre-filled waitlist text
+            document.getElementById('experience').value = '';
+        }
+
+        function openWaitlistForm() {
+            // For waitlist, we'll use the same form but pre-fill some text
+            document.getElementById('emailModal').style.display = 'block';
+            document.getElementById('experience').value = 'Interested in joining the waitlist for Drip Dessert House experiences';
+        }
+
+        function closeEmailForm() {
+            document.getElementById('emailModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('emailModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
     </script>
 </body>
 </html>
