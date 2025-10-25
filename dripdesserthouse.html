@@ -1490,14 +1490,13 @@
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
             
-            // Decode the email address (base64 encoded)
-            const encodedEmail = 'c2FtZWVyYW11ZGlnb25kYUBnbWFpbC5jb20=';
-            const email = atob(encodedEmail);
+            // Use the secure FormSubmit hash instead of email
+            const formHash = '8270cf11da736b99fadb2dd2ba4e7be6';
             
             // Create hidden form to submit to FormSubmit
             const hiddenForm = document.createElement('form');
             hiddenForm.method = 'POST';
-            hiddenForm.action = `https://formsubmit.co/${email}`;
+            hiddenForm.action = `https://formsubmit.co/${formHash}`;
             hiddenForm.style.display = 'none';
             
             // Add all form data
